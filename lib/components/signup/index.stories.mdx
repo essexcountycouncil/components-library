@@ -1,0 +1,67 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Signup } from './index.jsx';
+
+<Meta
+    title="Components/Signup"
+    component={Signup}
+    argTypes={{
+        isBig: {
+            name: 'Should be big size',
+            description: 'Controls whether the sign up should be big or not',
+            controls: {
+                type: 'boolean'
+            }
+        }
+    }}
+/>
+
+# Signup
+
+Use the signup to allow users to register for notifications. The method used applies to email notifcations, but could be applied to other methoda of communications.
+
+We have 2 types of signup that we use at Essex County Council Website (Essex.gov.uk)
+
+- the [basic sign up](#basic-sign-up)
+- the [big sign up](#big-sign-up)
+
+## Basic sign up
+
+### When to use sign up
+
+<Canvas>
+    <Story name="Basic sign up" args={{
+        isBig: false
+    }}>
+        {(args) => <Signup {...args } />}
+    </Story>
+</Canvas>
+
+## Big sign up
+
+### When to use big sign up
+
+<Canvas>
+    <Story name="Big sign up" args={{
+        isBig: true
+    }}>
+        {(args) => <Signup {...args } />}
+    </Story>
+</Canvas>
+
+## How to use sign ups
+
+When using sign up it should include a heading that should clearly and concisely tell the user what they are signing up to.
+
+### Accessibility
+
+To ensure sign ups are accessible it is important that the input and label are connected so assisstive technologies can recognise they are connected.  
+
+```html
+<label for="email">Enter your email address
+    <input type="text" id="email" name="email" autocomplete="off">
+</label>
+```
+
+## Content to be published 
+
+- Error handling with inputs

@@ -1,0 +1,66 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Seax from '../../images/seax.png';
+import { Search } from './index.jsx';
+
+<Meta
+    title="Components/Search"
+    component={Search}
+    parameters={{
+        controls: {
+            disabled: true
+        }
+    }}
+/>
+
+# Search
+
+Use search to enable users to look for content on the website.
+
+We have 2 versions of the search component
+
+- <a href='#Base'>Search</a>
+- <a href='#Header'>Search header</a>
+
+## Base search
+
+<Canvas>
+    <Story name="Base">
+        <Search />
+    </Story>
+</Canvas>
+
+### When to use the search
+
+Use the search on the search results page to allow users to search other terms.
+
+### When not to use the search
+
+Do not use the search in the body of content or topic page.
+
+## Search header
+
+<Canvas>
+    <Story name="Header">
+        <header className="header-background">
+            <div className="header">
+                <div className="nav">
+                    <div className="logo-wrap">
+                        <a href="/" className="logo-text seax">
+                            <img src={Seax} width="36" height="30" alt="Essex County Council logo" />
+                            Essex.gov.uk
+                        </a>
+                    </div>
+                    <Search />
+                </div>
+            </div>
+        </header>
+    </Story>
+</Canvas>
+
+### When to use search header
+
+Use the search header wehn you want to allow users to use search across the whole website.
+
+#### Content to be published
+
+- When not to use search header

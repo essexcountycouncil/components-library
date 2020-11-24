@@ -1,0 +1,91 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Checkbox } from './index.jsx';
+
+<Meta
+    title="Elements/Checkbox"
+    component={Checkbox}
+    argTypes={{
+        name: {
+            name: 'Name',
+            description: 'Name of the input'
+        },
+        value: {
+            name: 'Value',
+            description: 'Value of the input'
+        }
+    }}
+/>
+
+export const Template = (args) => <Checkbox {...args } />;
+
+# Checkbox
+
+Checkbox enables users to select more than one choice at a time from a selection of inputs, for examples all items that apply from a list.
+
+<Story
+    name="Checkbox"
+    args={{
+        name: 'email',
+        value: 'Email'
+    }}
+    decorators={[(Story) => (
+        <div className="form">
+            <div className="group">
+                <fieldset>
+                    <Story />
+                </fieldset>
+            </div>
+        </div>
+    )]}
+    parameters={{
+        docs: {
+            disable: true
+        }
+    }}
+>
+    {Template.bind({})}
+</Story>
+
+<Canvas>
+<div className="form">
+    <div className="group">
+        <fieldset>
+            <legend>Ask your question?</legend>
+            <Checkbox name='telephone' value='Telephone' />
+            <Checkbox name='email' value='Email' />
+        </fieldset>
+    </div>
+</div>
+</Canvas>
+
+
+<ArgsTable of={Checkbox} />
+
+## When to use checkboxes
+
+Use checkboxes to give users the ability to:
+
+- select multiple options from a list
+- toggle an option on or off
+
+## When not to use a checkbox
+
+If you want users to select just one option from a selection, for examples a yes or no answer, use the <a href="radio">radio</a> element.
+
+## How to use checkboxes
+
+Checkboxes should be grouped together in a `<fieldset>` to help users understand they are related with a `<legend>` that describes the group clearly.
+
+### Accessibility
+
+To ensure checkboxes are accessible it is important that the input and label are connected so assisstive technologies can recognise they are connected.  
+
+```html
+<input id="post" name="post" type="checkbox" value="Post">
+<label for="post">Post</label>
+```
+## Content to be published 
+
+- Error handling with checkboxes
+- Conditionally revealing content
+- Checkbox hints

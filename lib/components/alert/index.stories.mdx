@@ -1,0 +1,142 @@
+import { Meta, Story, Source, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
+import Alert from './index.jsx';
+
+<Meta
+    title="Components/Alert"
+    component={Alert}
+    argTypes={{
+        heading: {
+            name: 'Section heading',
+            description: 'Heading'
+        },
+        content: {
+            name: 'Content',
+            description: 'Text'
+        },
+        type: {
+            name: 'Type',
+            description: 'Type of alert to show',
+            control: {
+                type: 'select',
+                options: [
+                    'info',
+                    'warning',
+                    'error'
+                ]
+            }
+        },
+        children: {
+            control: {
+                type: null
+            }
+        }
+    }}
+/>
+
+# Alert
+
+Use alerts to inform or warn users of a temporary situation that may impact  them accessing council services. They should be displayed at the top of the main body of content.
+
+We have 3 types of alert that we use on the Essex County Council website (Essex.gov.uk)
+
+- the [information alert](#information)
+- the [warning alert](#warning)
+- the [error alert](#error)
+
+<ArgsTable of={Alert} />
+
+## Information
+
+### When to use the information alert
+
+Information alerts are used to direct a user’s attention to important information. This could include:
+
+- changes to a regular council service
+
+<Story name="Info" args={{
+    heading: 'We are updating our system',
+    content: 'We have been doing lots of research and you have helped us update this service.',
+    type: 'info'
+}}>
+    {(args) => (
+        <Alert {...args}>
+            <div class="section-heading">{args.heading}</div>
+            <p>{args.content}</p>
+        </Alert>
+    )}
+</Story>
+
+<Source code={`
+<Alert type="info">
+    <div class="section-heading">Heading</div>
+    <p>Content</p>
+</Alert>
+`} />
+
+## Warning
+
+### When to use the warning alert
+
+Warning alerts are used to prepare users for a variety of real world issues. This could include:
+
+- adverse weather information
+
+<Story name="Warning" args={{
+    heading: 'School closures',
+    content: 'Some schools in Essex are closed due to severe weather. Check if your child\'s school is closed',
+    type: 'warning'
+}}>
+    {(args) => (
+        <Alert {...args}>
+            <div class="section-heading">{args.heading}</div>
+            <p>{args.content}</p>
+        </Alert>
+    )}
+</Story>
+
+<Source code={`
+<Alert type="warning">
+    <div class="section-heading">Heading</div>
+    <p>Content</p>
+</Alert>
+`} />
+
+## Error
+
+### When to use the error alert
+
+Error alerts are used to direct a user’s attention to important system errors. This could include:
+
+- technical problems or maintenance on the website
+
+<Story name="Error" args={{
+    heading: 'We are experiencing some issues',
+    content: 'You may experience some issues with our website. Please bare with us while we resolve the issue.',
+    type: 'error'
+}}>
+    {(args) => (
+        <Alert {...args}>
+            <div class="section-heading">{args.heading}</div>
+            <p>{args.content}</p>
+        </Alert>
+    )}
+</Story>
+
+<Source code={`
+<Alert type="error">
+    <div class="section-heading">Heading</div>
+    <p>Content</p>
+</Alert>
+`} />
+
+## How to use alerts
+
+An alert can be displayed on the homepage or on lower level pages, depending on the topic and severity. They should always:
+
+- be clear and concise and link to another page with further information if necessary
+- be located at the top of the main body of content
+
+They shouldn't be used:
+
+- within paragraphs of text
+- more than once per page
