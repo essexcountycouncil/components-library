@@ -6,6 +6,7 @@ module.exports = {
   "addons": [
     "@storybook/addon-a11y",
     "@storybook/addon-essentials",
+    '@storybook/addon-jest',
     "@storybook/addon-links",
     '@storybook/preset-scss'
   ]
