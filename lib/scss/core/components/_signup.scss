@@ -76,8 +76,8 @@
 }
 
 .signup-background {
-  // background-color: $brand;
-  background-color: aqua;
+  background-color: $brand;
+  // background-color: aqua;
   .signup {
     @extend %site-width-container;
     @extend %contain-floats;
