@@ -1,10 +1,8 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests, build storybook and deploy to GH Pages
+# This workflow will do a clean install of node dependencies, run tests, build storybook and deploy to GH Pages
 name: Storybook Build CI
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
     branches: [ main ]
 
 jobs:
