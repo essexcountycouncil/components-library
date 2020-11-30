@@ -1,5 +1,7 @@
 # ECC Component Library
 
+![Storybook Build CI](https://github.com/essexcountycouncil/components-library/workflows/Storybook%20Build%20CI/badge.svg)
+
 A component library for ECC and 3rd parties can use a group of components + elements to ensure consistent styling and branding aswell as keeping a high level of accessibility and test coverage.
 
 We're still building this but as an example of what a component library + storybook could look like within Government: 
