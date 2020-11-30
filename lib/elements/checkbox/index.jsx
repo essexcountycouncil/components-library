@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export const Checkbox = ({name, value}) => (
-    <div class="multiple-choice">
+    <div className="multiple-choice" data-testid="checkbox">
         <input id={name} name={name} type="checkbox" value={value} />
         <label htmlFor={name}>{value}</label>
     </div>

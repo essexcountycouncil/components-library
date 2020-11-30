@@ -12,5 +12,18 @@
     ],
     "plugins": [
         "react-hot-loader/babel"
-    ]
+    ],
+    "env": {
+        "production": {
+            "plugins": [
+                [
+                    "react-remove-properties", {
+                        "properties": [
+                            "data-testid"
+                        ]
+                    }
+                ]
+            ]
+        }
+    }
 }
