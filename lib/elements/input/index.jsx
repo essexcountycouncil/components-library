@@ -10,8 +10,8 @@ export const Input = ({children, className, label, name, type}) => {
     const hint = children ? children : null;
 
     return (
-        <div className={classNames}>
-            <label for={name}>{label}</label>
+        <div className={classNames} data-testid='input'>
+            <label htmlFor={name}>{label}</label>
             {hint}
             <input className='form-control' id={name} name={name} type={type} />
         </div>

@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 export const Link = ({children, download, external, href, target, title}) => {
     if (external) {
         let infoMsg = 'Replacing your browser tab with an external website';
-        if (download) {
-            infoMsg = 'Clicking this will download or open this file';
-        }
 
         if (target === '_blank') {
             infoMsg = 'Opening a new tab from an external website';
+        }
+
+        if (download) {
+            infoMsg = 'Clicking this will download or open this file';
         }
 
         return (
