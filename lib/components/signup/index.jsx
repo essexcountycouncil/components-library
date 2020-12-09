@@ -20,7 +20,7 @@ const SignupMarkup = (
 );
 
 export const Signup = ({isBig}) => (
-    <section class={isBig ? 'signup-background' : 'signup'} role="form" aria-label="Subscribe to email">
+    <section class={isBig ? 'signup-background' : 'signup'} aria-label="Subscribe to email">
         {isBig ? <div className='signup'>{SignupMarkup}</div> : SignupMarkup}
     </section>
 );
