@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const BackLink = ({href}) => (
-    <a href={href} className="link-back">Back</a>
-);
+export const Back = ({href, text}) =>{
+   return <a href={href} className="link-back">{text}</a>  
+}   
 
-BackLink.propTypes = {
-    href: PropTypes.string.isRequired
+Back.propTypes = {
+    href: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired
 }
 
-export default BackLink;
+export default Back;

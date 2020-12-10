@@ -1,38 +1,42 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
-import { BackLink } from './index.jsx';
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Back } from "./index.jsx";
 
 <Meta
-    title="Elements/BackLink"
-    component={BackLink}
+    title="Elements/Back"
+    component={Back}
     argTypes={{
         href: {
-            name: 'Link',
-            description: 'Where you want the button to take the user'
+            name: "Link",
+            description: "Where do you want the link to take the user"
+        },
+        text: {
+            name: "Link Text",
+            description: "What do you want the link to say"
         }
-    }}
-    parameters={{
-        jest: []
     }}
 />
 
 # Back
 
 <Canvas>
-    <Story name="BackLink" args={{
-        href: 'financial-assessment-eligibility'
-    }}>
-        {(args) => <BackLink {...args } />}
+    <Story
+        name="Back"
+        args={{
+            href: "/",
+            text: "Back"
+        }}
+    >
+        {(args) => (
+            <Back {...args} />
+        )}
     </Story>
 </Canvas>
-
-<ArgsTable of={BackLink} />
 
 ## Using the back link
 
 The back link takes users back to the previous page. It should be used for transactional pages, such as an online form.
 
-The back link shouldn't be used instead of <a href="/docs/core/components/breadcrumbs">breadcrumbs</a>
-
+The back link shouldn't be used instead of <a href="/docs/components-breadcrumbs--breadcrumbs">breadcrumbs</a>
 
 ## When to use the back link
 
@@ -46,7 +50,7 @@ The back link should not be used as a replacement for breadcrumbs
 
 ## How to use back links
 
-Make sure the text you use describes the action of the link, for example "Back to Contact details".
+Make sure the text you use describes the action of the link, for example "Back to Contact details". 
 
 The link should take you back to the page you were last on, in the state it was in before they left.
 
@@ -54,6 +58,6 @@ Consider putting the back link in a location that is suitable. Do not surround i
 
 ## Accessibility
 
-When placing the back link, consider people who use assistive technologies such as screen readers.
+When placing the back link, consider people who use assistive technologies such as screen readers. 
 
 The text you use should also describe the action of the link. Using "Back" may not be enought to describe the action accurately.
