@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export const Back = ({href, text}) =>{
-   return <a href={href} class="link-back">{text}</a>  
+   return <a href={href} className="link-back">{text}</a>  
 }   
 
 Back.propTypes = {

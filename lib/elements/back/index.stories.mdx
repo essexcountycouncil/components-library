@@ -6,8 +6,8 @@ import { Back } from "./index.jsx";
     component={Back}
     argTypes={{
         href: {
-        name: "Link",
-        description: "Where you want the link to take the user"
+            name: "Link",
+            description: "Where do you want the link to take the user"
         },
         text: {
             name: "Link Text",
@@ -16,39 +16,28 @@ import { Back } from "./index.jsx";
     }}
 />
 
-export const Template = (args) => <Back {...args} />;
+
 
 # Back
-
-<Story
-    name="Back"
-    args={{
-        href: "/",
-        text: "Back"
-    }}
-    decorators={[(Story) => (      
-        <Story />      
-    )]}
-    parameters={{
-        docs: {
-            disable: true
-        }
-    }}
->
-    {Template.bind({})}
-</Story>
-
 <Canvas>
-<a href="/" class="link-back">Back</a>
+    <Story
+        name="Back"
+        args={{
+            href: "/",
+            text: "Back"
+        }}
+    >
+        {(args) => (
+            <Back {...args} />
+        )}
+    </Story>
 </Canvas>
-
 
 ## Using the back link
 
 The back link takes users back to the previous page. It should be used for transactional pages, such as an online form.
 
 The back link shouldn't be used instead of <a href="/docs/components-breadcrumbs--breadcrumbs">breadcrumbs</a>
-
 
 ## When to use the back link
 
