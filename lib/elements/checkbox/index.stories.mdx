@@ -1,22 +1,22 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
-import { Checkbox } from './index.jsx';
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Checkbox } from "./index.jsx";
 
 <Meta
     title="Elements/Checkbox"
     component={Checkbox}
     argTypes={{
         name: {
-            name: 'Name',
-            description: 'Name of the input'
+            name: "Name",
+            description: "Name of the input",
         },
         value: {
-            name: 'Value',
-            description: 'Value of the input'
-        }
+            name: "Value",
+            description: "Value of the input",
+        },
     }}
 />
 
-export const Template = (args) => <Checkbox {...args } />;
+export const Template = (args) => <Checkbox {...args} />;
 
 # Checkbox
 
@@ -25,39 +25,40 @@ Checkbox enables users to select more than one choice at a time from a selection
 <Story
     name="Checkbox"
     args={{
-        name: 'email',
-        value: 'Email'
+        name: "email",
+        value: "Email",
     }}
-    decorators={[(Story) => (
-        <div className="form">
-            <div className="group">
-                <fieldset>
-                    <Story />
-                </fieldset>
+    decorators={[
+        (Story) => (
+            <div className="form">
+                <div className="group">
+                    <fieldset>
+                        <Story />
+                    </fieldset>
+                </div>
             </div>
-        </div>
-    )]}
+        ),
+    ]}
     parameters={{
         docs: {
-            disable: true
-        }
+            disable: true,
+        },
     }}
 >
     {Template.bind({})}
 </Story>
 
 <Canvas>
-<div className="form">
-    <div className="group">
-        <fieldset>
-            <legend>Ask your question?</legend>
-            <Checkbox name='telephone' value='Telephone' />
-            <Checkbox name='email' value='Email' />
-        </fieldset>
+    <div className="form">
+        <div className="group">
+            <fieldset>
+                <legend>Ask your question?</legend>
+                <Checkbox name="telephone" value="Telephone" />
+                <Checkbox name="email" value="Email" />
+            </fieldset>
+        </div>
     </div>
-</div>
 </Canvas>
-
 
 <ArgsTable of={Checkbox} />
 
@@ -65,8 +66,8 @@ Checkbox enables users to select more than one choice at a time from a selection
 
 Use checkboxes to give users the ability to:
 
-- select multiple options from a list
-- toggle an option on or off
+-   select multiple options from a list
+-   toggle an option on or off
 
 ## When not to use a checkbox
 
@@ -78,14 +79,15 @@ Checkboxes should be grouped together in a `<fieldset>` to help users understand
 
 ### Accessibility
 
-To ensure checkboxes are accessible it is important that the input and label are connected so assisstive technologies can recognise they are connected.  
+To ensure checkboxes are accessible it is important that the input and label are connected so assisstive technologies can recognise they are connected.
 
 ```html
-<input id="post" name="post" type="checkbox" value="Post">
+<input id="post" name="post" type="checkbox" value="Post" />
 <label for="post">Post</label>
 ```
-## Content to be published 
 
-- Error handling with checkboxes
-- Conditionally revealing content
-- Checkbox hints
+## Content to be published
+
+-   Error handling with checkboxes
+-   Conditionally revealing content
+-   Checkbox hints

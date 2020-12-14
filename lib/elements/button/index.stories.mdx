@@ -1,33 +1,29 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
-import { Button } from './index.jsx';
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Button } from "./index.jsx";
 
 <Meta
     title="Elements/Button"
     component={Button}
     argTypes={{
         children: {
-            name: 'Content',
-            description: 'Text to show to the user'
+            name: "Content",
+            description: "Text to show to the user",
         },
         href: {
-            name: 'Link',
-            description: 'Where you want the button to take the user'
+            name: "Link",
+            description: "Where you want the button to take the user",
         },
         type: {
-            name: 'Type',
-            description: 'Type of button to use',
+            name: "Type",
+            description: "Type of button to use",
             control: {
-                type: 'select',
-                options: [
-                    'button',
-                    'text',
-                    'submit'
-                ]
-            }
-        }
+                type: "select",
+                options: ["button", "text", "submit"],
+            },
+        },
     }}
     parameters={{
-        jest: ['button.test.js']
+        jest: ["button.test.js"],
     }}
 />
 
@@ -36,30 +32,39 @@ import { Button } from './index.jsx';
 Use buttons to help users carry out an action.
 
 <Canvas>
-    <Story name="Base" args={{
-        children: 'Start Application',
-        href: 'financial-assessment-eligibility',
-        type: 'button'
-    }}>
-        {(args) => <Button {...args } />}
+    <Story
+        name="Base"
+        args={{
+            children: "Start Application",
+            href: "financial-assessment-eligibility",
+            type: "button",
+        }}
+    >
+        {(args) => <Button {...args} />}
     </Story>
 </Canvas>
 
 <Canvas>
-    <Story name="Text" args={{
-        children: 'Hide this message',
-        type: 'text'
-    }}>
-        {(args) => <Button {...args } />}
+    <Story
+        name="Text"
+        args={{
+            children: "Hide this message",
+            type: "text",
+        }}
+    >
+        {(args) => <Button {...args} />}
     </Story>
 </Canvas>
 
 <Canvas>
-    <Story name="Submit Buttons" args={{
-        children: 'Continue',
-        type: 'submit'
-    }}>
-        {(args) => <Button {...args } />}
+    <Story
+        name="Submit Buttons"
+        args={{
+            children: "Continue",
+            type: "submit",
+        }}
+    >
+        {(args) => <Button {...args} />}
     </Story>
 </Canvas>
 
@@ -70,9 +75,10 @@ Use buttons to help users carry out an action.
 Buttons should be used to help users carry out a task, like starting an application.
 
 Buttons should be used to:
-- Start a form
-- Continue to the next question of a form
-- Subscribe to something, such as email notifications
+
+-   Start a form
+-   Continue to the next question of a form
+-   Subscribe to something, such as email notifications
 
 ## When not to use buttons
 

@@ -1,21 +1,21 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
-import { Image } from './index.jsx';
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Image } from "./index.jsx";
 
 <Meta
     title="Elements/Image"
     component={Image}
     argTypes={{
         alt: {
-            name: 'Alternative text',
-            description: 'Describe the image'
+            name: "Alternative text",
+            description: "Describe the image",
         },
         src: {
-            name: 'Src url',
-            description: 'The image you want to display to the user'
-        }
+            name: "Src url",
+            description: "The image you want to display to the user",
+        },
     }}
     parameters={{
-        jest: []
+        jest: [],
     }}
 />
 
@@ -26,11 +26,15 @@ Use images only if there is a real user need. Avoid unnecessary decoration.
 ## Example
 
 <Canvas>
-    <Story name="Image" args={{
-        alt: 'Autumn leaves in the woods',
-        src: 'https://images.unsplash.com/photo-1603731655293-c0b1e452b36b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80'
-    }}>
-        {(args) => <Image {...args } />}
+    <Story
+        name="Image"
+        args={{
+            alt: "Autumn leaves in the woods",
+            src:
+                "https://images.unsplash.com/photo-1603731655293-c0b1e452b36b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80",
+        }}
+    >
+        {(args) => <Image {...args} />}
     </Story>
 </Canvas>
 
@@ -40,9 +44,9 @@ Use images only if there is a real user need. Avoid unnecessary decoration.
 
 Only use images if it adds value and purpose to your content. For example:
 
-- different types of pothole to report a dangerous pothole
-- different wedding venues for weddings
-- a caravan's internal layout for booking short breaks
+-   different types of pothole to report a dangerous pothole
+-   different wedding venues for weddings
+-   a caravan's internal layout for booking short breaks
 
 ## When not to use an image
 
@@ -56,6 +60,6 @@ Images should flow with the text content, not appear too prominent or isolated.
 
 Follow [W3C's guidance on making content accessible](https://www.w3.org/TR/WCAG20-TECHS/H37.html).
 
-- Images must have text alternatives that describe the information or function they represent. This makes sure that peope with disabilities can understand them.
-- Don't use images that have words in them, because screen readers won't be able to read the words.
-- When using an image (or img element), specify a text alternative with the alt attribute. Alternative text, or alt text, is read out by screen readers or displayed if an image does not load or if images have been switched off.
+-   Images must have text alternatives that describe the information or function they represent. This makes sure that peope with disabilities can understand them.
+-   Don't use images that have words in them, because screen readers won't be able to read the words.
+-   When using an image (or img element), specify a text alternative with the alt attribute. Alternative text, or alt text, is read out by screen readers or displayed if an image does not load or if images have been switched off.

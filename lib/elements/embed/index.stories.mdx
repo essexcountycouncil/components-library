@@ -1,32 +1,35 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
-import { Embed } from './index.jsx';
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Embed } from "./index.jsx";
 
 <Meta
     title="Elements/Embed"
     component={Embed}
     argTypes={{
         src: {
-            name: 'Link',
-            description: 'What content do you want to show to the user?'
+            name: "Link",
+            description: "What content do you want to show to the user?",
         },
         title: {
-            name: 'Title',
-            description: 'Describe the content to the user'
-        }
+            name: "Title",
+            description: "Describe the content to the user",
+        },
     }}
     parameters={{
-        jest: []
+        jest: [],
     }}
 />
 
 # Embed
 
 <Canvas>
-    <Story name="Embed" args={{
-        src: 'https://www.youtube.com/embed/U9nnRicMHOk',
-        title: 'School admissions, not preferred school'
-    }}>
-        {(args) => <Embed {...args } />}
+    <Story
+        name="Embed"
+        args={{
+            src: "https://www.youtube.com/embed/U9nnRicMHOk",
+            title: "School admissions, not preferred school",
+        }}
+    >
+        {(args) => <Embed {...args} />}
     </Story>
 </Canvas>
 

@@ -1,20 +1,20 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
-import { ContentBreak } from './index.jsx';
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { ContentBreak } from "./index.jsx";
 
 <Meta
     title="Elements/ContentBreak"
     component={ContentBreak}
     argTypes={{
         isBig: {
-            name: 'Is big',
-            description: 'Should it be a big break?',
+            name: "Is big",
+            description: "Should it be a big break?",
             controls: {
-                type: 'boolean'
-            }
-        }
+                type: "boolean",
+            },
+        },
     }}
     parameters={{
-        jest: []
+        jest: [],
     }}
 />
 
@@ -23,18 +23,24 @@ import { ContentBreak } from './index.jsx';
 Content breaks are used to visually seperate sections of content.
 
 <Canvas>
-    <Story name="Large break" args={{
-        isBig: true
-    }}>
-        {(args) => <ContentBreak {...args } />}
+    <Story
+        name="Large break"
+        args={{
+            isBig: true,
+        }}
+    >
+        {(args) => <ContentBreak {...args} />}
     </Story>
 </Canvas>
 
 <Canvas>
-    <Story name="Small break" args={{
-        isBig: false
-    }}>
-        {(args) => <ContentBreak {...args } />}
+    <Story
+        name="Small break"
+        args={{
+            isBig: false,
+        }}
+    >
+        {(args) => <ContentBreak {...args} />}
     </Story>
 </Canvas>
 
@@ -52,5 +58,5 @@ Do not use content breaks to break up paragraphs within a body of text or divide
 
 They should be used to:
 
-- thematically divide up sections of content, such as services, news and legislation
-- show a divide between a list of clickable items, such as news articles, service links or guidance documents
+-   thematically divide up sections of content, such as services, news and legislation
+-   show a divide between a list of clickable items, such as news articles, service links or guidance documents

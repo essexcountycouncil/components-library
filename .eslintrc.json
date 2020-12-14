@@ -27,11 +27,5 @@
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
-    "plugins": [
-        "babel",
-        "jest",
-        "jest-dom",
-        "jsx-a11y",
-        "react"
-    ]
+    "plugins": ["babel", "jest", "jest-dom", "jsx-a11y", "react"]
 }
