@@ -3,5 +3,4 @@
 /dist
 /.jest-test-results.json
 
-*.scss
 *.css
