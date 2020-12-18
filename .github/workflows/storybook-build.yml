@@ -2,26 +2,26 @@
 name: Storybook Build CI
 
 on:
-  push:
-    branches: [ main ]
+    push:
+        branches: [main]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: c-hive/gha-npm-cache@v1
-      - name: Install JS dependencies
-        run: npm install
-      - name: Test
-        run: npm run test:generate-output
-      - name: Build Storybook
-        run: npm run build:storybook
-      - name: Deploy to GH Pages
-        if: success()
-        uses: crazy-max/ghaction-github-pages@v2.2.0
-        with:
-          target_branch: gh-pages
-          build_dir: storybook-static
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+            - uses: c-hive/gha-npm-cache@v1
+            - name: Install JS dependencies
+              run: npm install
+            - name: Test
+              run: npm run test:generate-output
+            - name: Build Storybook
+              run: npm run build:storybook
+            - name: Deploy to GH Pages
+              if: success()
+              uses: crazy-max/ghaction-github-pages@v2.2.0
+              with:
+                  target_branch: gh-pages
+                  build_dir: storybook-static
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

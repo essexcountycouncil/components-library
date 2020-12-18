@@ -28,12 +28,12 @@
         .nav {
             @extend %grid-row;
             .logo-wrap {
-                height: $form-height*0.75;
+                height: $form-height * 0.75;
                 @include grid-column(1 / 2);
                 a.logo-text {
                     @media print {
-                    color: $black;
-                    font-size: $small;
+                        color: $black;
+                        font-size: $small;
                     }
                 }
             }

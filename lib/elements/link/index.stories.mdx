@@ -1,41 +1,41 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
-import { Link } from './index.jsx';
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Link } from "./index.jsx";
 
 <Meta
     title="Elements/Link"
     component={Link}
     argTypes={{
         children: {
-            name: 'Content',
-            description: 'Content for the user to click',
+            name: "Content",
+            description: "Content for the user to click",
             control: {
-                type: 'string'
-            }
+                type: "string",
+            },
         },
         download: {
-            name: 'Download',
-            description: 'Will this start a download / view a file?'
+            name: "Download",
+            description: "Will this start a download / view a file?",
         },
         external: {
-            name: 'External',
-            description: 'Is the user leaving this website?'
+            name: "External",
+            description: "Is the user leaving this website?",
         },
         href: {
-            name: 'Link',
-            description: 'Where should clicking this take the user?'
+            name: "Link",
+            description: "Where should clicking this take the user?",
         },
         target: {
-            name: 'Target',
-            description: 'Handles if a new tab should be launched',
+            name: "Target",
+            description: "Handles if a new tab should be launched",
             control: {
-                type: 'select',
-                options: ['', '_blank']
-            }
+                type: "select",
+                options: ["", "_blank"],
+            },
         },
         title: {
-            name: 'Title',
-            description: 'Describe the content to the user'
-        }
+            name: "Title",
+            description: "Describe the content to the user",
+        },
     }}
     parameters={{
         jest: ['link.test.js']
@@ -49,15 +49,18 @@ import { Link } from './index.jsx';
 ## Internal links
 
 <Canvas>
-    <Story name="Internal link" args={{
-        children: 'Internal link',
-        download: false,
-        external: false,
-        href: '/',
-        target: '',
-        title: 'An internal link'
-    }}>
-        {(args) => <Link {...args } />}
+    <Story
+        name="Internal link"
+        args={{
+            children: "Internal link",
+            download: false,
+            external: false,
+            href: "/",
+            target: "",
+            title: "An internal link",
+        }}
+    >
+        {(args) => <Link {...args} />}
     </Story>
 </Canvas>
 
@@ -67,24 +70,27 @@ Use external links to link to other websites or downloadable documents.
 
 There are 3 types of external links:
 
-- [Open webpage in a new tab](#new-tab)
-- [Open webpage in current tab](#current-tab)
-- [Open or download a document](#documents)
+-   [Open webpage in a new tab](#new-tab)
+-   [Open webpage in current tab](#current-tab)
+-   [Open or download a document](#documents)
 
 ### New tab
 
 Use this method to open a webpage from an external website in a new tab.
 
 <Canvas>
-    <Story name="External link/New tab" args={{
-        children: 'A new tab',
-        download: false,
-        external: true,
-        href: '/',
-        target: '_blank',
-        title: 'An External link'
-    }}>
-        {(args) => <Link {...args } />}
+    <Story
+        name="External link/New tab"
+        args={{
+            children: "A new tab",
+            download: false,
+            external: true,
+            href: "/",
+            target: "_blank",
+            title: "An External link",
+        }}
+    >
+        {(args) => <Link {...args} />}
     </Story>
 </Canvas>
 
@@ -93,15 +99,18 @@ Use this method to open a webpage from an external website in a new tab.
 Use this method to open a webpage from an external website in the current tab.
 
 <Canvas>
-    <Story name="External link/Same tab" args={{
-        children: 'Same tab',
-        download: false,
-        external: true,
-        href: '/',
-        target: '',
-        title: 'An External link'
-    }}>
-        {(args) => <Link {...args } />}
+    <Story
+        name="External link/Same tab"
+        args={{
+            children: "Same tab",
+            download: false,
+            external: true,
+            href: "/",
+            target: "",
+            title: "An External link",
+        }}
+    >
+        {(args) => <Link {...args} />}
     </Story>
 </Canvas>
 
@@ -110,15 +119,18 @@ Use this method to open a webpage from an external website in the current tab.
 Use this method to open or download a document frok this website.
 
 <Canvas>
-    <Story name="External link/Download" args={{
-        children: 'Download',
-        download: true,
-        external: true,
-        href: '/',
-        target: '',
-        title: 'An External link'
-    }}>
-        {(args) => <Link {...args } />}
+    <Story
+        name="External link/Download"
+        args={{
+            children: "Download",
+            download: true,
+            external: true,
+            href: "/",
+            target: "",
+            title: "An External link",
+        }}
+    >
+        {(args) => <Link {...args} />}
     </Story>
 </Canvas>
 

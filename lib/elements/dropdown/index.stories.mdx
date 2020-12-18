@@ -1,34 +1,34 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
-import { Dropdown } from './index.jsx';
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Dropdown } from "./index.jsx";
 
 <Meta
     title="Elements/Dropdown"
     component={Dropdown}
     argTypes={{
         children: {
-            name: 'Options',
-            description: 'Options for the dropdown',
+            name: "Options",
+            description: "Options for the dropdown",
             controls: {
-                type: 'array'
-            }
+                type: "array",
+            },
         },
         label: {
-            name: 'Label',
-            description: 'Label for the dropdown',
+            name: "Label",
+            description: "Label for the dropdown",
         },
         name: {
-            name: 'Name',
-            description: 'Name/Id for the dropdown',
-        }
+            name: "Name",
+            description: "Name/Id for the dropdown",
+        },
     }}
     parameters={{
         jest: ['dropdown.test.js']
     }}
 />
 
-export const DropdownStory = ({children, ...args}) => (
-    <Dropdown {...args} >
-        {children.map(option => (
+export const DropdownStory = ({ children, ...args }) => (
+    <Dropdown {...args}>
+        {children.map((option) => (
             <option>{option}</option>
         ))}
     </Dropdown>
@@ -41,37 +41,39 @@ Use select to let users select from a long list. As some users can struggle this
 <Story
     name="Dropdown"
     args={{
-        children: ['Recently published', 'Recently updated'],
-        label: 'Sort by',
-        name: 'sorting'
+        children: ["Recently published", "Recently updated"],
+        label: "Sort by",
+        name: "sorting",
     }}
-    decorators={[(Story) => (
-        <div className="form">
-            <div className="group">
-                <fieldset>
-                    <Story />
-                </fieldset>
+    decorators={[
+        (Story) => (
+            <div className="form">
+                <div className="group">
+                    <fieldset>
+                        <Story />
+                    </fieldset>
+                </div>
             </div>
-        </div>
-    )]}
+        ),
+    ]}
     parameters={{
         docs: {
-            disable: true
-        }
+            disable: true,
+        },
     }}
 >
     {DropdownStory.bind({})}
 </Story>
 
 <Canvas>
-<div className="form">
-    <div className="group">
-        <Dropdown label="Sort by" name="sorting">
-            <option>Recently published</option>
-            <option>Recently updated</option>
-        </Dropdown>
+    <div className="form">
+        <div className="group">
+            <Dropdown label="Sort by" name="sorting">
+                <option>Recently published</option>
+                <option>Recently updated</option>
+            </Dropdown>
+        </div>
     </div>
-</div>
 </Canvas>
 
 <ArgsTable of={Dropdown} />
@@ -84,10 +86,10 @@ It's often used when there is a long list that can't presented in another way, s
 
 ## Content to be published
 
-- Error handling with select
-- Conditionally revealing content
-- Select hints
-- Accessibility information
+-   Error handling with select
+-   Conditionally revealing content
+-   Select hints
+-   Accessibility information
 
 <!-- *Note: Be sure to update all label and input attributes with the correct details i.e.*
 

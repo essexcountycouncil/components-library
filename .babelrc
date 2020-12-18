@@ -10,17 +10,14 @@
         ],
         "@babel/preset-react"
     ],
-    "plugins": [
-        "react-hot-loader/babel"
-    ],
+    "plugins": ["react-hot-loader/babel"],
     "env": {
         "production": {
             "plugins": [
                 [
-                    "react-remove-properties", {
-                        "properties": [
-                            "data-testid"
-                        ]
+                    "react-remove-properties",
+                    {
+                        "properties": ["data-testid"]
                     }
                 ]
             ]

@@ -7,12 +7,12 @@ import { Back } from "./index.jsx";
     argTypes={{
         href: {
             name: "Link",
-            description: "Where do you want the link to take the user"
+            description: "Where do you want the link to take the user",
         },
         text: {
             name: "Link Text",
-            description: "What do you want the link to say"
-        }
+            description: "What do you want the link to say",
+        },
     }}
     parameters={{
         jest: ['back.test.js']
@@ -26,12 +26,10 @@ import { Back } from "./index.jsx";
         name="Back"
         args={{
             href: "/",
-            text: "Back"
+            text: "Back",
         }}
     >
-        {(args) => (
-            <Back {...args} />
-        )}
+        {(args) => <Back {...args} />}
     </Story>
 </Canvas>
 

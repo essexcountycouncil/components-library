@@ -1,39 +1,36 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
-import Button from '../button/index.jsx';
-import Input from './index.jsx';
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import Button from "../button/index.jsx";
+import Input from "./index.jsx";
 
 <Meta
     title="Elements/Input"
     component={Input}
     argTypes={{
         children: {
-            description: 'Used to render hints to the user',
+            description: "Used to render hints to the user",
             control: {
-                type: null
-            }
+                type: null,
+            },
         },
         className: {
-            name: 'Classes',
-            description: 'Add classes to the group'
+            name: "Classes",
+            description: "Add classes to the group",
         },
         label: {
-            name: 'Label name',
-            description: 'Name of the label ie. What is this input for?'
+            name: "Label name",
+            description: "Name of the label ie. What is this input for?",
         },
         name: {
-            name: 'Name',
-            description: 'Name of the input'
+            name: "Name",
+            description: "Name of the input",
         },
         type: {
-            name: 'Type',
-            description: 'Type of input to show',
+            name: "Type",
+            description: "Type of input to show",
             control: {
-                type: 'select',
-                options: [
-                    'number',
-                    'text'
-                ]
-            }
+                type: "select",
+                options: ["number", "text"],
+            },
         },
     }}
     parameters={{
@@ -41,56 +38,68 @@ import Input from './index.jsx';
     }}
 />
 
-export const Template = (args) => <Input {...args } />;
+export const Template = (args) => <Input {...args} />;
 
 # Input
 
 <Story
     name="Input"
     args={{
-        label: 'Full name',
-        name: 'name'
+        label: "Full name",
+        name: "name",
     }}
-    decorators={[(Story) => (
-        <form className="form">
-            <Story />
-        </form>
-    )]}
+    decorators={[
+        (Story) => (
+            <form className="form">
+                <Story />
+            </form>
+        ),
+    ]}
     parameters={{
         docs: {
-            disable: true
-        }
+            disable: true,
+        },
     }}
 >
     {Template.bind({})}
 </Story>
 
 <Canvas>
-<form className='form'>
-    <Input label='Full name' name='name'>
-        <span className='form-hint'>As shown on your birth certificate or passport</span>
-    </Input>
-</form>
+    <form className="form">
+        <Input label="Full name" name="name">
+            <span className="form-hint">
+                As shown on your birth certificate or passport
+            </span>
+        </Input>
+    </form>
 </Canvas>
 
 <Canvas>
-<form class="form">
-    <div className='group'>
-        <fieldset>
-            <legend>
-                <span className="form-hint">
-                    What is your date of birth?
-                </span>
-                <span className="form-hint">
-                    For example, 31 3 1980
-                </span>
-            </legend>
-            <Input className='day' label='Day' name='day' type='number' />
-            <Input className='month' label='Month' name='month' type='number' />
-            <Input className='year' label='Year' name='year' type='number' />
-        </fieldset>
-    </div>
-</form>
+    <form class="form">
+        <div className="group">
+            <fieldset>
+                <legend>
+                    <span className="form-hint">
+                        What is your date of birth?
+                    </span>
+                    <span className="form-hint">For example, 31 3 1980</span>
+                </legend>
+                <Input className="day" label="Day" name="day" type="number" />
+                <Input
+                    className="month"
+                    label="Month"
+                    name="month"
+                    type="number"
+                />
+                <Input
+                    className="year"
+                    label="Year"
+                    name="year"
+                    type="number"
+                />
+            </fieldset>
+        </div>
+    </form>
 </Canvas>
 
 <ArgsTable of={Input} />
@@ -110,25 +119,35 @@ Don't use inputs when users need to enter a longer string of text - in this case
 As an example here is how you could use these within a form
 
 <Canvas>
-<form class='form'>
-    <Input label='Full name' name='name'>
-        <span className='form-hint'>As shown on your birth certificate or passport</span>
-    </Input>
-    <div className='group'>
-        <fieldset>
-            <legend>
-                <span className='form-hint'>
-                    What is your date of birth?
-                </span>
-                <span className='form-hint'>
-                    For example, 31 3 1980
-                </span>
-            </legend>
-            <Input className='day' label='Day' name='day' type='number' />
-            <Input className='month' label='Month' name='month' type='number' />
-            <Input className='year' label='Year' name='year' type='number' />
-        </fieldset>
-    </div>
-    <Button type='submit'>Continue</Button>
-</form>
+    <form class="form">
+        <Input label="Full name" name="name">
+            <span className="form-hint">
+                As shown on your birth certificate or passport
+            </span>
+        </Input>
+        <div className="group">
+            <fieldset>
+                <legend>
+                    <span className="form-hint">
+                        What is your date of birth?
+                    </span>
+                    <span className="form-hint">For example, 31 3 1980</span>
+                </legend>
+                <Input className="day" label="Day" name="day" type="number" />
+                <Input
+                    className="month"
+                    label="Month"
+                    name="month"
+                    type="number"
+                />
+                <Input
+                    className="year"
+                    label="Year"
+                    name="year"
+                    type="number"
+                />
+            </fieldset>
+        </div>
+        <Button type="submit">Continue</Button>
+    </form>
 </Canvas>

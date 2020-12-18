@@ -18,17 +18,14 @@
         "plugin:jest/recommended",
         "plugin:jest-dom/recommended",
         "plugin:jsx-a11y/recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "prettier",
+        "prettier/babel",
+        "prettier/react"
     ],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
-    "plugins": [
-        "babel",
-        "jest",
-        "jest-dom",
-        "jsx-a11y",
-        "react"
-    ]
+    "plugins": ["babel", "jest", "jest-dom", "jsx-a11y", "react"]
 }

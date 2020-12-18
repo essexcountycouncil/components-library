@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import Button from '../../elements/button';
+import Button from "../../elements/button";
 
-export const InformationAlert = ({children}) => (
+export const InformationAlert = ({ children }) => (
     <div class="alert info">
         <div class="alert-icon">
             <span class="fas fa-info-circle"></span>
@@ -15,7 +15,7 @@ export const InformationAlert = ({children}) => (
     </div>
 );
 
-export const WarningAlert = ({children}) => (
+export const WarningAlert = ({ children }) => (
     <div class="alert warning">
         <div class="alert-icon">
             <span class="fas fa-exclamation-triangle"></span>
@@ -27,7 +27,7 @@ export const WarningAlert = ({children}) => (
     </div>
 );
 
-export const ErrorAlert = ({children}) => (
+export const ErrorAlert = ({ children }) => (
     <div class="alert error">
         <div class="alert-icon">
             <span class="fas fa-exclamation-circle"></span>
@@ -39,21 +39,21 @@ export const ErrorAlert = ({children}) => (
     </div>
 );
 
-export const Alert = ({children, type}) => {
-    if (type === 'info') {
-        return <InformationAlert children={children} />
-    } else if (type === 'warning') {
-        return <WarningAlert children={children} />
-    } else if (type === 'error') {
-        return <ErrorAlert children={children} />
+export const Alert = ({ children, type }) => {
+    if (type === "info") {
+        return <InformationAlert children={children} />;
+    } else if (type === "warning") {
+        return <WarningAlert children={children} />;
+    } else if (type === "error") {
+        return <ErrorAlert children={children} />;
     }
 
     return null;
-}
+};
 
 Alert.propTypes = {
     children: PropTypes.node.isRequired,
-    type: PropTypes.oneOf(['info', 'warning', 'error']).isRequired
+    type: PropTypes.oneOf(["info", "warning", "error"]).isRequired,
 };
 
 export default Alert;
