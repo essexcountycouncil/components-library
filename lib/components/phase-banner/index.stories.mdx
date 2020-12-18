@@ -1,0 +1,45 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import PhaseBanner from './index.jsx';
+
+<Meta
+    title="Components/Phase banner"
+    component={PhaseBanner}
+    parameters={{
+        actions: {
+            disabled: true
+        },
+        jest: ['phase-banner.test.js']
+    }}
+    argTypes={{
+        children: {
+            name: 'Content',
+            description: 'Text to show to the user'
+        },
+        phaseTag: {
+            name: 'Phase tag',
+            description: 'What phase of development is the website in?'
+        }
+    }}
+/>
+
+# Phase banner
+
+Use the phase banner component to show users your service is still being worked on.
+
+<Canvas>
+    <Story
+        name="Phase banner"
+        args={{
+            children: `This is our new website design - it's work in progress.`,
+            phaseTag: 'beta'
+        }}
+    >
+        {(args) => <PhaseBanner {...args } />}
+    </Story>
+</Canvas>
+
+## When to use phase banner
+
+You must a phase banner to indicate that your service or website is still being worked on. The phase ondisplay will tell users what stage of development the website is.
+
+The banner should sit directly below the header.
