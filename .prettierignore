@@ -2,5 +2,6 @@
 /storybook-static
 /dist
 /.jest-test-results.json
+/package-lock.json
 
 *.css
