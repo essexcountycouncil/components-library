@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const SignupMarkup = (
     <>
@@ -7,30 +7,41 @@ const SignupMarkup = (
         <form action="/search" method="get" class="form">
             <div class="group">
                 <div class="signup-input">
-                    <label for="email">Enter your email address
-                        <input type="text" id="email" name="email" autocomplete="off" />
+                    <label for="email">
+                        Enter your email address
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            autocomplete="off"
+                        />
                     </label>
                 </div>
                 <div class="signup-button" id="submitYourEmailAddress">
-                    <button type="submit" class="button subscribe">Subscribe</button>
+                    <button type="submit" class="button subscribe">
+                        Subscribe
+                    </button>
                 </div>
             </div>
         </form>
     </>
 );
 
-export const Signup = ({isBig}) => (
-    <section class={isBig ? 'signup-background' : 'signup'} role="form" aria-label="Subscribe to email">
-        {isBig ? <div className='signup'>{SignupMarkup}</div> : SignupMarkup}
+export const Signup = ({ isBig }) => (
+    <section
+        class={isBig ? "signup-background" : "signup"}
+        aria-label="Subscribe to email"
+    >
+        {isBig ? <div className="signup">{SignupMarkup}</div> : SignupMarkup}
     </section>
 );
 
 Signup.propTypes = {
-    isBig: PropTypes.bool
+    isBig: PropTypes.bool,
 };
 
 Signup.defaultProps = {
-    isBig: false
+    isBig: false,
 };
 
 export default Signup;

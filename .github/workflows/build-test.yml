@@ -2,18 +2,18 @@
 name: Build+Test
 
 on:
-  pull_request:
-    branches: [ main ]
+    pull_request:
+        branches: [main]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: c-hive/gha-npm-cache@v1
-      - name: Install JS dependencies
-        run: npm install
-      - name: Build
-        run: npm run build:dev
-      - name: Test
-        run: npm run test
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+            - uses: c-hive/gha-npm-cache@v1
+            - name: Install JS dependencies
+              run: npm install
+            - name: Build
+              run: npm run build:dev
+            - name: Test
+              run: npm run test

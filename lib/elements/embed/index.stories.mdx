@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Embed } from "./index.jsx";
+
+<Meta
+    title="Elements/Embed"
+    component={Embed}
+    argTypes={{
+        src: {
+            name: "Link",
+            description: "What content do you want to show to the user?",
+        },
+        title: {
+            name: "Title",
+            description: "Describe the content to the user",
+        },
+    }}
+    parameters={{
+        jest: ['embed.test.js']
+    }}
+/>
+
+# Embed
+
+<Canvas>
+    <Story
+        name="Embed"
+        args={{
+            src: "https://www.youtube.com/embed/U9nnRicMHOk",
+            title: "School admissions, not preferred school",
+        }}
+    >
+        {(args) => <Embed {...args} />}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Embed} />
+
+## When to use embed
+
+Use embed to insert an inline frame. An inline frame or `iFrame` is used to embed content in a webpage.
+
+## How to use embed
+
+### Accessibility
+
+`iFrame`'s need to be titled using the `title` attribute. The title should identify to assistive technologies what the embeded content is.

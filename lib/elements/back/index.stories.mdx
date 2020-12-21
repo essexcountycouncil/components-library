@@ -7,12 +7,15 @@ import { Back } from "./index.jsx";
     argTypes={{
         href: {
             name: "Link",
-            description: "Where do you want the link to take the user"
+            description: "Where do you want the link to take the user",
         },
         text: {
             name: "Link Text",
-            description: "What do you want the link to say"
-        }
+            description: "What do you want the link to say",
+        },
+    }}
+    parameters={{
+        jest: ['back.test.js']
     }}
 />
 
@@ -23,12 +26,10 @@ import { Back } from "./index.jsx";
         name="Back"
         args={{
             href: "/",
-            text: "Back"
+            text: "Back",
         }}
     >
-        {(args) => (
-            <Back {...args} />
-        )}
+        {(args) => <Back {...args} />}
     </Story>
 </Canvas>
 
@@ -50,7 +51,7 @@ The back link should not be used as a replacement for breadcrumbs
 
 ## How to use back links
 
-Make sure the text you use describes the action of the link, for example "Back to Contact details". 
+Make sure the text you use describes the action of the link, for example "Back to Contact details".
 
 The link should take you back to the page you were last on, in the state it was in before they left.
 
@@ -58,6 +59,6 @@ Consider putting the back link in a location that is suitable. Do not surround i
 
 ## Accessibility
 
-When placing the back link, consider people who use assistive technologies such as screen readers. 
+When placing the back link, consider people who use assistive technologies such as screen readers.
 
 The text you use should also describe the action of the link. Using "Back" may not be enought to describe the action accurately.
