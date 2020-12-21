@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 // import './styles.scss';
 import seax from "../../images/seax.png";
 
-const Header = ({ title, navLinks }) => (
+export const Header = ({ title, navLinks }) => (
     <header className="header-background" data-testid="header">
         <div className="header">
             <nav className="nav">
