@@ -1,0 +1,52 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Contributing" />
+
+# Creating a component + story
+
+## Starting from another component base
+
+For starters I highly recommend copying a folder within `components/` or `elements/`. A good choice is  `components-library\lib\components\browser-check` copying this and pasting it into the `components/` or `elements/` folder for your new component. Give it a re-name and you should have something like the following:
+
+```
+[your component name]/index.jsx
+[your component name]/index.stories.mdx
+```
+
+The `index.jsx` is where the react code for your component sits and the `index.stories.mdx` is where your documentation lives.
+
+For now open the `index.jsx` file in your code editor and replace `BrowserCheck` with your component name. We do this in PascalCase with the first letter of each word capitalised and with no spaces between each word. You can also remove things within the `()` so it looks like the following:
+
+```jsx
+import React from "react";
+
+const ComponentName = () => ();
+
+export default ComponentName;
+```
+
+This is the base of our component. For now you can add some test markup to within the 2nd `()` like
+
+```jsx
+const ComponentName = () => (
+    <div>Hello, World!</div>
+);
+```
+
+With this done we can move to the story file.
+
+## Modifying a story file
+
+Using the `BrowserCheck` story file as a base, the first thing to change would be on line 2 where you can replace the `{ BrowserCheck }` with the `ComponentName` you chose above to form `import ComponentName from "./index.jsx";`.
+
+Next up within the `<Meta>` component, you'll want to adjust the `title` attribute for what you want your component to be discovered with in the sidebar of storybook. You'll also want to change the `component` attribute to your component. Within the `parameters` attribute you'll have `actions` and `controls` for now these can be left as disabled.
+
+After this we move into your standard markdown for documenting the component. Generally we give it a title of the component and then a brief sentence to describe it but you're free to do this how you want.
+
+When you want to show your component you should wrap it in the `<Canvas>` component if you are just demonstrating it. To get it to show up within the canvas and different options you should look to create a story.
+
+For a story wrap your component within a `<Story>` component with a `name` attribute for what you want to create. If you give it the same name as in the meta (without the `Components/` or `Elements/`) then it will just display that in the sidebar.
+
+Once that's done and you have a story created you should be good to now start storybook with `npm run storybook` and it should start storybook in your browser and you should be able to see your component in the sidebar. If you navigate to it, you should see what you have done in the `Docs` area and your component on it's own in the `Canvas` section. You should also now be able to make changes to these files and see the changes updated automatically on storybook.
+
+So it's from here that you can start building the component properly.
