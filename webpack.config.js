@@ -68,7 +68,10 @@ const config = {
     externals: ["react", "react-dom"],
     plugins: [
         new CopyPlugin({
-            patterns: [{ from: "./lib/scss", to: "dist/scss" }],
+            patterns: [
+                { from: "./lib/scss", to: "./scss" },
+                { from: "./lib/images", to: "./images" },
+            ],
         }),
         new BundleAnalyzerPlugin({
             analyzerMode: "static",
