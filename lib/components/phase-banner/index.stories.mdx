@@ -1,4 +1,5 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import StaticSource from '../../../.storybook/components/static-source.jsx';
 import PhaseBanner from './index.jsx';
 
 <Meta
@@ -37,6 +38,8 @@ Use the phase banner component to show users your service is still being worked 
         {(args) => <PhaseBanner {...args } />}
     </Story>
 </Canvas>
+
+<StaticSource code={<PhaseBanner phaseTag="beta">This is our new website design - it's work in progress.</PhaseBanner>} />
 
 ## When to use phase banner
 

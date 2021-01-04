@@ -1,4 +1,5 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import StaticSource from '../../../.storybook/components/static-source.jsx';
 import { BrowserCheck } from "./index.jsx";
 
 <Meta
@@ -23,6 +24,8 @@ Browser check notifies users if they are using an older browser
         <BrowserCheck />
     </Story>
 </Canvas>
+
+<StaticSource code={<BrowserCheck />} />
 
 ## When to use browser check
 

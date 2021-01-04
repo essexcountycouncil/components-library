@@ -1,4 +1,5 @@
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import StaticSource from '../../../.storybook/components/static-source.jsx';
 import { Dropdown } from "./index.jsx";
 
 <Meta
@@ -75,6 +76,17 @@ Use select to let users select from a long list. As some users can struggle this
         </div>
     </div>
 </Canvas>
+
+You can replace the `<Dropdown />` react element in the above code snippet with the following if using static HTML, swapping out `Sort by` and `sorting` where necessary along with the `<option>`s you want
+
+<StaticSource
+    code={
+        <Dropdown label="Sort by" name="sorting">
+            <option>Recently published</option>
+            <option>Recently updated</option>
+        </Dropdown>
+    }
+/>
 
 <ArgsTable of={Dropdown} />
 
