@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 import Button from "../../elements/button";
 
 export const InformationAlert = ({ children }) => (
-    <div class="alert info">
-        <div class="alert-icon">
-            <span class="fas fa-info-circle"></span>
+    <div className="alert info">
+        <div className="alert-icon">
+            <span className="fas fa-info-circle"></span>
         </div>
-        <div class="alert-text">
+        <div className="alert-text">
             {children}
             <Button type="text">Hide this message</Button>
         </div>
@@ -16,11 +16,11 @@ export const InformationAlert = ({ children }) => (
 );
 
 export const WarningAlert = ({ children }) => (
-    <div class="alert warning">
-        <div class="alert-icon">
-            <span class="fas fa-exclamation-triangle"></span>
+    <div className="alert warning">
+        <div className="alert-icon">
+            <span className="fas fa-exclamation-triangle"></span>
         </div>
-        <div class="alert-text">
+        <div className="alert-text">
             {children}
             <Button type="text">Hide this message</Button>
         </div>
@@ -28,11 +28,11 @@ export const WarningAlert = ({ children }) => (
 );
 
 export const ErrorAlert = ({ children }) => (
-    <div class="alert error">
-        <div class="alert-icon">
-            <span class="fas fa-exclamation-circle"></span>
+    <div className="alert error">
+        <div className="alert-icon">
+            <span className="fas fa-exclamation-circle"></span>
         </div>
-        <div class="alert-text">
+        <div className="alert-text">
             {children}
             <Button type="text">Hide this message</Button>
         </div>

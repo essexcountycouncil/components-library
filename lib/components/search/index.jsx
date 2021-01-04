@@ -2,8 +2,8 @@ import React from "react";
 
 export const Search = () => (
     <form action="/search" method="get" class="form" role="search">
-        <div class="group search">
-            <div class="search-input">
+        <div className="group search">
+            <div className="search-input">
                 <label for="cludo-search-hero-form">
                     Search essex.gov.uk
                     <input
