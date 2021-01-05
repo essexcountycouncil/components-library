@@ -1,0 +1,72 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import StaticSource from '../../../.storybook/components/static-source';
+import SectionLinks from "./index.jsx";
+
+<Meta
+    title="Components/Section links"
+    component={SectionLinks}
+    parameters={{
+        actions: {
+            disabled: true,
+        },
+        controls: {
+            disabled: true,
+        },
+    }}
+/>
+
+export const exampleSections = [
+    {
+        title: 'Section 1',
+        links: [
+            {path: '#1', title: 'Link 1'},
+            {path: '#2', title: 'Link 2'},
+            {path: '#3', title: 'Link 3'}
+        ]
+    },
+    {
+        title: 'Section 2',
+        links: [
+            {path: '#1', title: 'Link 1'},
+            {path: '#2', title: 'Link 2'},
+            {path: '#3', title: 'Link 3'}
+        ]
+    }
+];
+
+# Section links
+
+Section links provides a way to group a collection of links into sections grouped by a title. With react we pass through an array of objects to the `sections` attribute of the `<SectionLinks />` component as so:
+
+<Canvas>
+    <Story name="Section links">
+        <SectionLinks
+            sections={exampleSections}
+        />
+    </Story>
+</Canvas>
+
+```js
+const exampleSections = [
+    {
+        title: 'Section 1',
+        links: [
+            {path: '#1', title: 'Link 1'},
+            {path: '#2', title: 'Link 2'},
+            {path: '#3', title: 'Link 3'}
+        ]
+    },
+    {
+        title: 'Section 2',
+        links: [
+            {path: '#1', title: 'Link 1'},
+            {path: '#2', title: 'Link 2'},
+            {path: '#3', title: 'Link 3'}
+        ]
+    }
+];
+```
+
+An example of this in static html is like so:
+
+<StaticSource code={<SectionLinks sections={exampleSections} />} />

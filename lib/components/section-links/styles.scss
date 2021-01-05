@@ -1,0 +1,25 @@
+.section-links {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+
+    ul {
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+        padding: 5px 0;
+    }
+
+    .section-title {
+        color: #505a5f;
+    }
+
+    a {
+        font-size: 0.8rem;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
