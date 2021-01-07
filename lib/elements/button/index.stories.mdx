@@ -1,4 +1,5 @@
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import StaticSource from '../../../.storybook/components/static-source.jsx';
 import { Button } from "./index.jsx";
 
 <Meta
@@ -44,6 +45,8 @@ Use buttons to help users carry out an action.
     </Story>
 </Canvas>
 
+<StaticSource code={<Button href="financial-assessment-eligibility" type="button">Start Application</Button>} />
+
 <Canvas>
     <Story
         name="Text"
@@ -56,6 +59,8 @@ Use buttons to help users carry out an action.
     </Story>
 </Canvas>
 
+<StaticSource code={<Button type="text">Hide this message</Button>} />
+
 <Canvas>
     <Story
         name="Submit Buttons"
@@ -67,6 +72,8 @@ Use buttons to help users carry out an action.
         {(args) => <Button {...args} />}
     </Story>
 </Canvas>
+
+<StaticSource code={<Button type="submit">Continue</Button>} />
 
 <ArgsTable of={Button} />
 

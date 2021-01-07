@@ -1,4 +1,5 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import StaticSource from '../../../.storybook/components/static-source.jsx';
 import Seax from "../../images/seax.png";
 import { Search } from "./index.jsx";
 
@@ -28,6 +29,8 @@ We have 2 versions of the search component
         <Search />
     </Story>
 </Canvas>
+
+<StaticSource code={<Search />} />
 
 ### When to use the search
 
@@ -61,6 +64,29 @@ Do not use the search in the body of content or topic page.
         </header>
     </Story>
 </Canvas>
+
+<StaticSource
+    code={
+        <header className="header-background">
+            <div className="header">
+                <div className="nav">
+                    <div className="logo-wrap">
+                        <a href="/" className="logo-text seax">
+                            <img
+                                src={Seax}
+                                width="36"
+                                height="30"
+                                alt="Essex County Council logo"
+                            />
+                            Essex.gov.uk
+                        </a>
+                    </div>
+                    <Search />
+                </div>
+            </div>
+        </header>
+    }
+/>
 
 ### When to use search header
 

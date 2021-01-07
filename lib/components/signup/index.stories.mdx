@@ -1,4 +1,5 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import StaticSource from '../../../.storybook/components/static-source.jsx';
 import { Signup } from "./index.jsx";
 
 <Meta
@@ -39,6 +40,8 @@ We have 2 types of signup that we use at Essex County Council Website (Essex.gov
     </Story>
 </Canvas>
 
+<StaticSource code={<Signup />} />
+
 ## Big sign up
 
 ### When to use big sign up
@@ -53,6 +56,8 @@ We have 2 types of signup that we use at Essex County Council Website (Essex.gov
         {(args) => <Signup {...args} />}
     </Story>
 </Canvas>
+
+<StaticSource code={<Signup isBig />} />
 
 ## How to use sign ups
 

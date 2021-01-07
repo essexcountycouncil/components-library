@@ -1,4 +1,5 @@
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import StaticSource from '../../../.storybook/components/static-source.jsx';
 import { Embed } from "./index.jsx";
 
 <Meta
@@ -32,6 +33,10 @@ import { Embed } from "./index.jsx";
         {(args) => <Embed {...args} />}
     </Story>
 </Canvas>
+
+<StaticSource
+    code={<Embed src="https://www.youtube.com/embed/U9nnRicMHOk" title="School admissions, not preferred school" />}
+/>
 
 <ArgsTable of={Embed} />
 
