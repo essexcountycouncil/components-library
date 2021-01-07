@@ -5,6 +5,7 @@ import {
     ArgsTable,
     Canvas,
 } from "@storybook/addon-docs/blocks";
+import StaticSource from '../../../.storybook/components/static-source.jsx';
 import Alert from "./index.jsx";
 
 <Meta
@@ -81,6 +82,15 @@ Information alerts are used to direct a user’s attention to important informat
 `}
 />
 
+<StaticSource
+    code={
+        <Alert type="info">
+            <div class="section-heading">Heading</div>
+            <p>Content</p>
+        </Alert>
+    }
+/>
+
 ## Warning
 
 ### When to use the warning alert
@@ -115,6 +125,15 @@ Warning alerts are used to prepare users for a variety of real world issues. Thi
 `}
 />
 
+<StaticSource
+    code={
+        <Alert type="warning">
+            <div class="section-heading">Heading</div>
+            <p>Content</p>
+        </Alert>
+    }
+/>
+
 ## Error
 
 ### When to use the error alert
@@ -147,6 +166,15 @@ Error alerts are used to direct a user’s attention to important system errors.
     <p>Content</p>
 </Alert>
 `}
+/>
+
+<StaticSource
+    code={
+        <Alert type="error">
+            <div class="section-heading">Heading</div>
+            <p>Content</p>
+        </Alert>
+    }
 />
 
 ## How to use alerts

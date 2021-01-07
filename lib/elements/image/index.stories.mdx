@@ -1,4 +1,5 @@
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import StaticSource from '../../../.storybook/components/static-source.jsx';
 import { Image } from "./index.jsx";
 
 <Meta
@@ -37,6 +38,10 @@ Use images only if there is a real user need. Avoid unnecessary decoration.
         {(args) => <Image {...args} />}
     </Story>
 </Canvas>
+
+<StaticSource
+    code={<Image src="https://images.unsplash.com/photo-1603731655293-c0b1e452b36b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1500&q=80" alt="Autumn leaves in the woods" />}
+/>
 
 <ArgsTable of={Image} />
 
