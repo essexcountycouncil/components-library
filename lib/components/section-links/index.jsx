@@ -2,18 +2,19 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Link from "../../elements/link";
-import "./styles.scss";
 
 const SectionLinks = ({ sections }) => {
     return (
         <nav className="section-links">
             {sections.map((section) => (
-                <ul key={section.title}>
-                    <li className="section-title">{section.title}</li>
+                <ul key={section.title} role="group">
+                    <li className="section-title" role="treeitem">
+                        {section.title}
+                    </li>
                     {section.links.map((link) => {
                         const { path, title } = link;
                         return (
-                            <li key={title}>
+                            <li key={title} role="treeitem">
                                 <Link href={path} title={title}>
                                     {title}
                                 </Link>
