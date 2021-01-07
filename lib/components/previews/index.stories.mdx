@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Preview } from "./index.jsx";
+
+<Meta
+    title="Components/Preview"
+    component={Preview}
+    argTypes={{
+        linkHeading: {
+            name: "Link Heading",
+            description: "What do you want the heading link to say",
+        },
+        supportingText: {
+            name: "Supporting Text",
+            description: "What do you want the supporting text to say",
+        },
+    }}
+/>
+
+# Previews
+
+<Canvas>
+    <Story
+        name="Preview"
+        args={{
+            linkHeading: "Preview heading",
+            supportingText: "Preview copy explaining what content it contains",
+        }}
+    >
+        {(args) => <Preview {...args} />}
+    </Story>
+</Canvas>
