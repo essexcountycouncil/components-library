@@ -1,0 +1,68 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Inset } from "./index.jsx";
+import { LinkTo } from "@storybook/addon-links";
+
+<Meta
+    title="Components/Inset"
+    component={Inset}
+    argTypes={{
+        heading: {
+            name: "Inset heading",
+            description: "What do you want the heading to say",
+        },
+        text: {
+            name: "Inset text",
+            description: "What do you want the text to say",
+        },
+    }}
+/>
+
+# Inset
+
+Use the inset component to highlight important text on a page.
+
+You can use insets:
+
+- [with a heading](#with-a-heading)
+- [without a heading](#without-a-heading)
+
+## With a heading
+
+<Canvas>
+    <Story
+        name="Inset"
+        args={{
+            heading: "There are over 260 grit bins.",
+            text: "Use the salt in the grit bins provided by us to clear snow and ice from public roads and pavements. It's illegal and irresponsible to use this salt on your private property and driveways.",
+        }}
+    >
+        {(args) => <Inset {...args} />}
+    </Story>
+</Canvas>
+
+## Without a heading
+
+<Canvas>
+    <Story
+        name="Inset without heading"
+        args={{
+            text: "It can only be completed if you have already been assessed as needing care and support.",
+        }}
+    >
+        {(args) => <Inset {...args} />}
+    </Story>
+</Canvas>
+
+
+## When to use inset
+
+Use the inset component as visual aid to differentiate an excerpt of text from the body of content. It should contain information that’s useful or important to the user, for example:
+
+- quotes
+- facts
+- statistics
+- pertinent information
+
+## When not to use inset
+
+Insets shouldn’t be used instead of an [alert](?path=/docs/components-alert--info) which should provide very important information for a limited time.
