@@ -4,7 +4,9 @@ import PropTypes from "prop-types";
 export const Inset = ({ heading, text }) => {
     return (
         <div className="inset">
-            <div className="section-heading">{heading}</div>
+            {heading.length > 0 &&
+                <div className="section-heading">{heading}</div>
+            }
             <p>
                 {text}
             </p>
@@ -14,6 +16,11 @@ export const Inset = ({ heading, text }) => {
 
 Inset.propTypes = {
     text: PropTypes.string.isRequired,
+    heading: PropTypes.string,
 };
+
+Inset.defaultProps = {
+    heading: '',
+}
 
 export default Inset;
