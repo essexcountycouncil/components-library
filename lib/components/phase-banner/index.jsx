@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const PhaseBanner = ({ children, phaseTag }) => (
+export const PhaseBanner = ({ children, phaseTag }) => (
     <div
         className="phase-banner-background"
         role="region"

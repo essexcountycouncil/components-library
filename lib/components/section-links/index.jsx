@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import Link from "../../elements/link";
 
-const SectionLinks = ({ sections }) => {
+export const SectionLinks = ({ sections }) => {
     return (
         <nav className="section-links">
             {sections.map((section) => (
