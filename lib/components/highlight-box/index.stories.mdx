@@ -1,0 +1,45 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { HighlightBox } from "./index.jsx";
+
+<Meta
+    title="Components/Highlight Box"
+    component={HighlightBox}
+    argTypes={{
+        heading:{
+            name: "Heading",
+            description: "What do you want the heading to say?",
+        },
+        text:{
+            name: "Text",
+            description: "What do you want the supporting text to say?",
+        },
+    }}
+/>
+
+# Highlight box
+
+The highlight box is a visible container to convey important information to the user following a transaction or completion of a form.
+
+<Canvas>
+    <Story
+        name="Highlight Box"
+        args={{
+            heading: "Financial checker complete",
+            text: "Sefl funded care",
+        }}
+    >
+        {(args) => <HighlightBox {...args} />}
+     </Story>
+</Canvas>   
+
+## When to use the highlight box
+
+Use the highlight box to display confirmation and important information to the user when a transaction has been completed succesfully.
+
+## When not to use the highlight box
+
+Do not use the highlight box on pages that are not transactional.
+
+## Accessibility
+
+A <code>h1</code> tag is included within highlight box. This heading should replace the main <code>h1</code> tag on the page.
