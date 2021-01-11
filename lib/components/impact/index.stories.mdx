@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Impact } from "./index.jsx";
+
+<Meta
+    title="Components/Impact"
+    component={Impact}
+    argTypes={{
+        href: {
+            name: "Link",
+            description: "Where do you want the link to take the user",
+        },
+        linktext: {
+            name: "Link Text",
+            description: "What do you want the link to say",
+        },
+        supportingtext: {
+            name: "Supporting Text",
+            description: "What do you want the supporting text to say",
+        },
+    }}
+/>
+
+# Impact
+
+<Canvas>
+    <Story
+        name="Impact"
+        args={{
+            href: "/",
+            linktext: "Get out more at our Country Parks",
+            supportingtext:"Whether you’re out for a walk or run to improve your fitness or want to take the family on an outdoor adventure, discover many ways to get out more at our Country Parks.",
+        }}
+    >
+        {(args) => <Impact {...args} />}
+    </Story>
+</Canvas>
+
+## Using impact
+
+It should only be used on the homepage and topic pages that have a campaign focus, such as the news landing page.
+
+It shouldn’t be used on information and topic pages.
