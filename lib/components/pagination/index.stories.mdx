@@ -1,0 +1,65 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Pagination } from "./index.jsx";
+
+<Meta
+    title="Components/Pagination"
+    component={Pagination}
+    argTypes={{
+        prevhref: {
+            name: "Prev Link",
+            description: "Where do you want the pref link to take the user",
+        },
+        prevtext: {
+            name: "Prev Link Text",
+            description: "What do you want the prev link to say",
+        },
+        nexthref: {
+            name: "Next Link",
+            description: "Where do you want the next link to take the user",
+        },
+        nexttext: {
+            name: "Next Link Text",
+            description: "What do you want the next link to say",
+        },
+    }}
+/>
+
+# Pagination
+
+Use pagination to allow users to navigate between a set of related pages.
+
+<Canvas>
+    <Story
+        name="Pagination"
+        args={{
+            prevhref: "/",
+            prevtext: "Paying for care and support",
+            nexthref: "/",
+            nexttext: "Personal budget",
+        }}
+    >
+        {(args) => <Pagination {...args} />}
+    </Story>
+</Canvas>
+
+## When to use pagination
+
+Use paginationto allow users to navigate between a small group of related pages to help users find related information, for example a group of pages about paying for care and support.
+
+## When not use pagination
+
+Do not use pagination on pages that are not related, this could confuse users.
+
+Do not use pagination on transactional pages or forms.
+
+Consider using buttons or back links instead.
+
+## How to use pagination
+
+Use pagination at the bottom of the page, along with contents at the top of the page just below the title.
+
+Use the left arrow along with the word “Previous” and a link to the previous page. Use the right arrow along with the word “Next” and a link to the next page. Use the smae page titles that are used on the contents.
+
+## Accessibility
+
+The pagination component incorporates the `<nav />` element to show that the links are a type of navigation. This `<nav />` also has the attribute `aria-label` with the value `Pagination`. Screen readers will read out this label to identify what type of navigation it is.
