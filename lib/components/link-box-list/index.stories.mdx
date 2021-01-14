@@ -1,0 +1,104 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import { LinkBoxList } from "./link-box-list.jsx";
+import { LinkBoxListItem } from "./link-box-list.jsx";
+
+<Meta
+    title="Components/LinkBoxList"
+    component={LinkBoxList}
+    argTypes={{
+        children: {
+            description: "Used to render hints to the user",
+            control: {
+                type: null,
+            },           
+        }, 
+        href: {
+            name: "Link destination",
+            description: "Where do you want the link to take you",
+        },
+        text: {
+            name: "Link text",
+            description: "What do you what the link to say",
+        },
+        supportingText: {
+            name: "Supporting text",
+            description: "What do you want the supporting text to say",
+        },
+    }}
+/>
+
+export const Template = (args) => <LinkBoxListItem {...args} />;
+
+# LinkBox
+
+Link boxes are usually displayed on topic pages and help to signpost users to the most popular or useful content within that section.
+
+<Story
+        name="LinkBoxListItem"
+        args={{
+            href: "/",
+            text: "Get social care help",
+            supportingText: "How to get help and support if you or someone you know is struggling to cope",
+        }}
+        decorators={[
+        (Story) => (
+            <LinkBoxList>
+                <Story />
+            </LinkBoxList>
+        )
+        ]}
+        parameters={{
+        docs: {
+            disable: true,
+        },
+    }}
+    >
+        {Template.bind({})}
+ </Story>
+
+<Canvas>
+    <LinkBoxList>
+        <LinkBoxListItem href="/" text="Get social care help" supportingText="How to get help and support if you or someone you know is struggling to cope"/>
+    </LinkBoxList>
+</Canvas>
+
+<Canvas>
+    <Story
+        name="LinkBoxList"
+        args={{
+            href: "/",
+            text: "Get social care help",
+            supportingText: "How to get help and support if you or someone you know is struggling to cope",
+        }}
+    >
+    {(args) => (
+        <LinkBoxList>
+            <LinkBoxListItem href="/" text="Get social care help" supportingText="How to get help and support if you or someone you know is struggling to cope" {...args}/>
+            <LinkBoxListItem href="/" text="Report abuse or neglect" supportingText="Report abuse or neglect, types of abuse, safeguarding and deprivation of liberty safeguards"/>
+            <LinkBoxListItem href="/" text="Support for carers" supportingText="Information, support and guidance for people who look after someone"/>
+        </LinkBoxList>  
+         )}      
+    </Story>
+</Canvas>
+
+## When to use link boxes
+
+Use link boxes to signpost users to popular or useful information in a particular section from a topic page.
+
+## How to use link boxes
+
+Link boxes should always consist of:
+
+- a link to another page of content
+- clear and concise link text
+- a short description of what the user can expect to find on the page
+
+Link boxes should not have:
+
+- lengthy text
+- email addresses or telephone numbers
+- additional formatting such as bold, italics or lists
+
+## Content to be published
+
+- When to to use link boxes
