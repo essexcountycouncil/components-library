@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
-import { LinkBoxList } from "./link-box-list.jsx";
-import { LinkBoxListItem } from "./link-box-list.jsx";
+import StaticSource from '../../../.storybook/components/static-source.jsx';
+import { LinkBoxList, LinkBoxListItem } from "./link-box-list.jsx";
 
 <Meta
     title="Components/LinkBoxList"
@@ -10,8 +10,8 @@ import { LinkBoxListItem } from "./link-box-list.jsx";
             description: "Used to render hints to the user",
             control: {
                 type: null,
-            },           
-        }, 
+            },
+        },
         href: {
             name: "Link destination",
             description: "Where do you want the link to take you",
@@ -62,6 +62,12 @@ Link boxes are usually displayed on topic pages and help to signpost users to th
     </LinkBoxList>
 </Canvas>
 
+<StaticSource code={
+    <LinkBoxList>
+        <LinkBoxListItem href="/" text="Get social care help" supportingText="How to get help and support if you or someone you know is struggling to cope"/>
+    </LinkBoxList>
+} />
+
 <Canvas>
     <Story
         name="LinkBoxList"
@@ -76,10 +82,18 @@ Link boxes are usually displayed on topic pages and help to signpost users to th
             <LinkBoxListItem href="/" text="Get social care help" supportingText="How to get help and support if you or someone you know is struggling to cope" {...args}/>
             <LinkBoxListItem href="/" text="Report abuse or neglect" supportingText="Report abuse or neglect, types of abuse, safeguarding and deprivation of liberty safeguards"/>
             <LinkBoxListItem href="/" text="Support for carers" supportingText="Information, support and guidance for people who look after someone"/>
-        </LinkBoxList>  
-         )}      
+        </LinkBoxList>
+         )}
     </Story>
 </Canvas>
+
+<StaticSource code={
+    <LinkBoxList>
+        <LinkBoxListItem href="/" text="Get social care help" supportingText="How to get help and support if you or someone you know is struggling to cope" />
+        <LinkBoxListItem href="/" text="Report abuse or neglect" supportingText="Report abuse or neglect, types of abuse, safeguarding and deprivation of liberty safeguards"/>
+        <LinkBoxListItem href="/" text="Support for carers" supportingText="Information, support and guidance for people who look after someone"/>
+    </LinkBoxList>
+} />
 
 ## When to use link boxes
 

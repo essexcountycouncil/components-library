@@ -1,4 +1,5 @@
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import StaticSource from '../../../.storybook/components/static-source.jsx';
 import { Link } from "./index.jsx";
 
 <Meta
@@ -64,6 +65,10 @@ import { Link } from "./index.jsx";
     </Story>
 </Canvas>
 
+<StaticSource code={
+    <Link href="/" title="An internal link">Internal link</Link>
+} />
+
 ## External links
 
 Use external links to link to other websites or downloadable documents.
@@ -94,6 +99,10 @@ Use this method to open a webpage from an external website in a new tab.
     </Story>
 </Canvas>
 
+<StaticSource code={
+    <Link href="/" title="An external link" target="_blank" external>A new tab</Link>
+} />
+
 ### Current tab
 
 Use this method to open a webpage from an external website in the current tab.
@@ -114,6 +123,10 @@ Use this method to open a webpage from an external website in the current tab.
     </Story>
 </Canvas>
 
+<StaticSource code={
+    <Link href="/" title="An external link" external>Same tab</Link>
+} />
+
 ### Documents
 
 Use this method to open or download a document frok this website.
@@ -133,6 +146,10 @@ Use this method to open or download a document frok this website.
         {(args) => <Link {...args} />}
     </Story>
 </Canvas>
+
+<StaticSource code={
+    <Link href="/" title="An external link" download external>Download</Link>
+} />
 
 ### Using External link
 
