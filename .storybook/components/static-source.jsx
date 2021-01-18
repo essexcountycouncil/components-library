@@ -8,6 +8,9 @@ const StaticSource = ({ code }) => {
     const staticCode = ReactDOMServer.renderToStaticMarkup(code);
     const formattedCode = prettier.format(staticCode, {
         parser: "html",
+        embeddedLanguageFormatting: "off",
+        htmlWhitespaceSensitivity: "ignore",
+        tabWidth: 4,
         plugins: [parserHtml],
     });
 
