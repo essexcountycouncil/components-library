@@ -1,4 +1,5 @@
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import StaticSource from '../../../.storybook/components/static-source.jsx';
 import { HighlightBox } from "./index.jsx";
 
 <Meta
@@ -25,12 +26,16 @@ The highlight box is a visible container to convey important information to the 
         name="Highlight Box"
         args={{
             heading: "Financial checker complete",
-            text: "Sefl funded care",
+            text: "Self funded care",
         }}
     >
         {(args) => <HighlightBox {...args} />}
      </Story>
-</Canvas>   
+</Canvas>
+
+<StaticSource code={
+    <HighlightBox heading="Financial checker complete" text="Self funded care" />
+} />
 
 ## When to use the highlight box
 

@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import StaticSource from '../../../.storybook/components/static-source.jsx';
 import { Inset } from "./index.jsx";
-import { LinkTo } from "@storybook/addon-links";
 
 <Meta
     title="Components/Inset"
@@ -40,6 +40,13 @@ You can use insets:
     </Story>
 </Canvas>
 
+<StaticSource code={
+    <Inset
+        heading="There are over 260 grit bins."
+        text="Use the salt in the grit bins provided by us to clear snow and ice from public roads and pavements. It's illegal and irresponsible to use this salt on your private property and driveways."
+    />
+} />
+
 ## Without a heading
 
 <Canvas>
@@ -53,6 +60,11 @@ You can use insets:
     </Story>
 </Canvas>
 
+<StaticSource code={
+    <Inset
+        text="It can only be completed if you have already been assessed as needing care and support."
+    />
+} />
 
 ## When to use inset
 
