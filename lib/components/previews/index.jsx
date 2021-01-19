@@ -1,48 +1,44 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const Preview = ({ supportingText, linkHeading }) => {
+export const Previews = ({ children }) => (
+    <div className="previews">{children}</div>
+);
+
+Previews.propTypes = {
+    children: PropTypes.node.isRequired,
+};
+
+export const Preview = ({
+    href,
+    image,
+    linkHeading,
+    metaText,
+    supportingText,
+}) => {
     return (
-        
-            <div className="previews">
-                <div className="preview">
-                    <h3 className="sub-section-heading">
-                        <a href="#">{linkHeading}</a>
-                    </h3>
-                    <p>{supportingText}</p>
-                </div>
-                <div className="preview">
-                    <h3 className="sub-section-heading">
-                        <a href="#">{linkHeading}</a>
-                    </h3>
-                    <p>{supportingText}</p>
-                </div>
-                <div className="preview">
-                    <h3 className="sub-section-heading">
-                        <a href="#">{linkHeading}</a>
-                    </h3>
-                    <p>{supportingText}</p>
-                </div>
-                <div className="preview">
-                    <h3 className="sub-section-heading">
-                        <a href="#">{linkHeading}</a>
-                    </h3>
-                    <p>{supportingText}</p>
-                </div>
-                <div className="preview">
-                    <h3 className="sub-section-heading">
-                        <a href="#">{linkHeading}</a>
-                    </h3>
-                    <p>{supportingText}</p>
-                </div>
-            </div>
-       
+        <div className="preview">
+            {image && image}
+            <h3 className="sub-section-heading">
+                <a href={href}>{linkHeading}</a>
+            </h3>
+            <p>{supportingText}</p>
+            {metaText && <p className="meta">{metaText}</p>}
+        </div>
     );
 };
 
 Preview.propTypes = {
-   supportingText: PropTypes.string.isRequired,
-   linkHeading: PropTypes.string.isRequired,
+    href: PropTypes.string.isRequired,
+    image: PropTypes.element,
+    linkHeading: PropTypes.string.isRequired,
+    metaText: PropTypes.string,
+    supportingText: PropTypes.string.isRequired,
+};
+
+Preview.defaultProps = {
+    metaText: "",
+    image: undefined,
 };
 
 export default Preview;

@@ -1,17 +1,32 @@
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
 import StaticSource from '../../../.storybook/components/static-source.jsx';
-import { Preview } from "./index.jsx";
+import { Previews, Preview } from "./index.jsx";
 
 <Meta
     title="Components/Preview"
     component={Preview}
     argTypes={{
+        href: {
+            name: "Link to",
+            description: "What do we want to link to",
+        },
+        image: {
+            name: "Image",
+            description: "Displays the image in the preview",
+            control: {
+                type: null,
+            }
+        },
         linkHeading: {
-            name: "Link Heading",
+            name: "Link heading",
             description: "What do you want the heading link to say",
         },
+        metaText: {
+            name: "Meta text",
+            description: "Displays meta text (date etc)"
+        },
         supportingText: {
-            name: "Supporting Text",
+            name: "Supporting text",
             description: "What do you want the supporting text to say",
         },
     }}
@@ -19,21 +34,141 @@ import { Preview } from "./index.jsx";
 
 # Previews
 
+You are free to use one preview within the Previews area or as many as you would like.
+
+<ArgsTable of={Preview} />
+
+## One preview
+
 <Canvas>
     <Story
-        name="Preview"
+        name="One preview"
         args={{
+            href: "/",
             linkHeading: "Preview heading",
             supportingText: "Preview copy explaining what content it contains",
         }}
+        decorators={[
+            (Story) => (
+                <Previews>
+                    <Story />
+                </Previews>
+            )
+        ]}
     >
         {(args) => <Preview {...args} />}
     </Story>
 </Canvas>
 
 <StaticSource code={
-    <Preview
-        linkHeading="Preview heading"
-        supportingText="Preview copy explaining what content it contains"
-    />
+    <Previews>
+        <Preview
+            href="/"
+            linkHeading="Preview heading"
+            supportingText="Preview copy explaining what content it contains"
+        />
+    </Previews>
+} />
+
+## Multiple previews
+
+<Canvas>
+    <Story
+        name="Multiple preview"
+        args={{
+            href: "/",
+            linkHeading: "Preview heading",
+            supportingText: "Preview copy explaining what content it contains",
+        }}
+    >
+        {(args) => (
+            <Previews>
+                <Preview
+                    href="/"
+                    linkHeading="Preview heading"
+                    supportingText="Preview copy explaining what content it contains"
+                    {...args}
+                />
+                <Preview
+                    href="/"
+                    linkHeading="Preview heading"
+                    supportingText="Preview copy explaining what content it contains"
+                />
+                <Preview
+                    href="/"
+                    linkHeading="Preview heading"
+                    supportingText="Preview copy explaining what content it contains"
+                />
+                <Preview
+                    href="/"
+                    linkHeading="Preview heading"
+                    supportingText="Preview copy explaining what content it contains"
+                />
+                <Preview
+                    href="/"
+                    linkHeading="Preview heading"
+                    supportingText="Preview copy explaining what content it contains"
+                />
+            </Previews>
+        )}
+    </Story>
+</Canvas>
+
+<StaticSource code={
+    <Previews>
+        <Preview
+            linkHeading="Preview heading"
+            supportingText="Preview copy explaining what content it contains"
+        />
+        <Preview
+            linkHeading="Preview heading"
+            supportingText="Preview copy explaining what content it contains"
+        />
+        <Preview
+            linkHeading="Preview heading"
+            supportingText="Preview copy explaining what content it contains"
+        />
+        <Preview
+            linkHeading="Preview heading"
+            supportingText="Preview copy explaining what content it contains"
+        />
+        <Preview
+            linkHeading="Preview heading"
+            supportingText="Preview copy explaining what content it contains"
+        />
+    </Previews>
+} />
+
+## With image
+
+<Canvas>
+    <Story
+        name="With image"
+        args={{
+            href: "/",
+            image: <img src="https://essexcountycouncil.github.io/essex-county-council-digital-manual/assets/images/news.jpg" alt="Image description" width="200" height="112" />,
+            linkHeading: "Preview heading",
+            supportingText: "Preview copy explaining what content it contains",
+        }}
+        decorators={[
+            (Story) => (
+                <Previews>
+                    <Story />
+                </Previews>
+            )
+        ]}
+    >
+        {(args) => <Preview {...args} />}
+    </Story>
+</Canvas>
+
+<StaticSource code={
+    <Previews>
+        <Preview
+            href="/"
+            image={<img src="https://essexcountycouncil.github.io/essex-county-council-digital-manual/assets/images/news.jpg" alt="Image description" width="200" height="112" />}
+            linkHeading="Preview heading"
+            supportingText="Preview copy explaining what content it contains"
+        />
+    </Previews>
 } />
