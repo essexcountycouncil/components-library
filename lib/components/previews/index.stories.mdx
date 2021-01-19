@@ -40,24 +40,38 @@ You are free to use one preview within the Previews area or as many as you would
 
 ## One preview
 
+<Story
+    name="One preview"
+    args={{
+        href: "/",
+        linkHeading: "Preview heading",
+        supportingText: "Preview copy explaining what content it contains",
+    }}
+    decorators={[
+        (Story) => (
+            <Previews>
+                <Story />
+            </Previews>
+        )
+    ]}
+    parameters={{
+        docs: {
+            disable: true
+        },
+        jest: ['previews.test.js', 'preview.test.js']
+    }}
+>
+    {(args) => <Preview {...args} />}
+</Story>
+
 <Canvas>
-    <Story
-        name="One preview"
-        args={{
-            href: "/",
-            linkHeading: "Preview heading",
-            supportingText: "Preview copy explaining what content it contains",
-        }}
-        decorators={[
-            (Story) => (
-                <Previews>
-                    <Story />
-                </Previews>
-            )
-        ]}
-    >
-        {(args) => <Preview {...args} />}
-    </Story>
+    <Previews>
+        <Preview
+            href="/"
+            linkHeading="Preview heading"
+            supportingText="Preview copy explaining what content it contains"
+        />
+    </Previews>
 </Canvas>
 
 <StaticSource code={

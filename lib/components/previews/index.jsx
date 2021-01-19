@@ -2,7 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export const Previews = ({ children }) => (
-    <div className="previews">{children}</div>
+    <div className="previews" data-testid="previews">
+        {children}
+    </div>
 );
 
 Previews.propTypes = {
@@ -17,7 +19,7 @@ export const Preview = ({
     supportingText,
 }) => {
     return (
-        <div className="preview">
+        <div className="preview" data-testid="preview">
             {image && image}
             <h3 className="sub-section-heading">
                 <a href={href}>{linkHeading}</a>
