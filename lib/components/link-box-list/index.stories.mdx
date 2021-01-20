@@ -34,27 +34,27 @@ export const Template = (args) => <LinkBoxListItem {...args} />;
 Link boxes are usually displayed on topic pages and help to signpost users to the most popular or useful content within that section.
 
 <Story
-        name="LinkBoxListItem"
-        args={{
-            href: "/",
-            text: "Get social care help",
-            supportingText: "How to get help and support if you or someone you know is struggling to cope",
-        }}
-        decorators={[
+    name="LinkBoxListItem"
+    args={{
+        href: "/",
+        text: "Get social care help",
+        supportingText: "How to get help and support if you or someone you know is struggling to cope",
+    }}
+    decorators={[
         (Story) => (
             <LinkBoxList>
                 <Story />
             </LinkBoxList>
         )
-        ]}
-        parameters={{
+    ]}
+    parameters={{
         docs: {
             disable: true,
         },
     }}
-    >
-        {Template.bind({})}
- </Story>
+>
+    {Template.bind({})}
+</Story>
 
 <Canvas>
     <LinkBoxList>
@@ -77,13 +77,13 @@ Link boxes are usually displayed on topic pages and help to signpost users to th
             supportingText: "How to get help and support if you or someone you know is struggling to cope",
         }}
     >
-    {(args) => (
-        <LinkBoxList>
-            <LinkBoxListItem href="/" text="Get social care help" supportingText="How to get help and support if you or someone you know is struggling to cope" {...args}/>
-            <LinkBoxListItem href="/" text="Report abuse or neglect" supportingText="Report abuse or neglect, types of abuse, safeguarding and deprivation of liberty safeguards"/>
-            <LinkBoxListItem href="/" text="Support for carers" supportingText="Information, support and guidance for people who look after someone"/>
-        </LinkBoxList>
-         )}
+        {(args) => (
+            <LinkBoxList>
+                <LinkBoxListItem href="/" text="Get social care help" supportingText="How to get help and support if you or someone you know is struggling to cope" {...args}/>
+                <LinkBoxListItem href="/" text="Report abuse or neglect" supportingText="Report abuse or neglect, types of abuse, safeguarding and deprivation of liberty safeguards"/>
+                <LinkBoxListItem href="/" text="Support for carers" supportingText="Information, support and guidance for people who look after someone"/>
+            </LinkBoxList>
+        )}
     </Story>
 </Canvas>
 

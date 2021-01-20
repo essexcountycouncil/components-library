@@ -8,7 +8,7 @@ export const LinkBoxListItem = ({ href, text, supportingText }) => {
                 <a href={href} className="sub-section-heading">
                     {text}
                 </a>
-            <   p>{supportingText}</p>
+                <p>{supportingText}</p>
             </div>
         </li>
     );
@@ -21,15 +21,11 @@ LinkBoxListItem.propTypes = {
 };
 
 export const LinkBoxList = ({ children }) => {
-    return (
-        <ul className="link-boxes">
-            {children}
-        </ul>
-    )
+    return <ul className="link-boxes">{children}</ul>;
 };
 
 LinkBoxList.propTypes = {
     children: PropTypes.node,
-}
+};
 
 export default LinkBoxList;
