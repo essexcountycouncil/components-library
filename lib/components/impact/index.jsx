@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export const Impact = ({ href, linktext, supportingtext }) => {
     return (
-        <div className="impact">
+        <div className="impact" data-testid="impact">
             <div className="hero campaign">
                 <div className="overlay"></div>
                 <div className="overlay-box">
@@ -23,6 +23,6 @@ Impact.propTypes = {
     href: PropTypes.string.isRequired,
     linktext: PropTypes.string.isRequired,
     supportingtext: PropTypes.string.isRequired,
-}
+};
 
 export default Impact;

@@ -5,6 +5,9 @@ import { Signup } from "./index.jsx";
 <Meta
     title="Components/Signup"
     component={Signup}
+    parameters={{
+        jest: ['signup.test.js']
+    }}
     argTypes={{
         isBig: {
             name: "Should be big size",

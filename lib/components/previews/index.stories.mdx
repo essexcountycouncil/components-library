@@ -5,6 +5,9 @@ import { Previews, Preview } from "./index.jsx";
 <Meta
     title="Components/Preview"
     component={Preview}
+    parameters={{
+        jest: ['previews.test.js', 'preview.test.js']
+    }}
     argTypes={{
         href: {
             name: "Link to",
@@ -57,8 +60,7 @@ You are free to use one preview within the Previews area or as many as you would
     parameters={{
         docs: {
             disable: true
-        },
-        jest: ['previews.test.js', 'preview.test.js']
+        }
     }}
 >
     {(args) => <Preview {...args} />}

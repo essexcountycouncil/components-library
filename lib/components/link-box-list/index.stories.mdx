@@ -5,6 +5,9 @@ import { LinkBoxList, LinkBoxListItem } from "./link-box-list.jsx";
 <Meta
     title="Components/LinkBoxList"
     component={LinkBoxList}
+    parameters={{
+        jest: ['link-box-list.test.js', 'link-box-list-item.test.js']
+    }}
     argTypes={{
         children: {
             description: "Used to render hints to the user",

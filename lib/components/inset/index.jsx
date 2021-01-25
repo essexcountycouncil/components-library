@@ -3,13 +3,11 @@ import PropTypes from "prop-types";
 
 export const Inset = ({ heading, text }) => {
     return (
-        <div className="inset">
-            {heading.length > 0 &&
+        <div className="inset" data-testid="inset">
+            {heading.length > 0 && (
                 <div className="section-heading">{heading}</div>
-            }
-            <p>
-                {text}
-            </p>
+            )}
+            <p>{text}</p>
         </div>
     );
 };
@@ -20,7 +18,7 @@ Inset.propTypes = {
 };
 
 Inset.defaultProps = {
-    heading: '',
-}
+    heading: "",
+};
 
 export default Inset;
