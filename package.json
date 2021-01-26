@@ -9,7 +9,8 @@
         "build:storybook": "build-storybook",
         "test": "jest",
         "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
-        "storybook": "start-storybook -p 6006"
+        "storybook": "start-storybook -p 6006",
+        "prepublishOnly": "npm run build:prod"
     },
     "files": [
         "dist",
