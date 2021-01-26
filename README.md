@@ -13,9 +13,20 @@ We're still building this but as an example of what a component library + storyb
 -   React
 -   SCSS
 
-## Install
+## Consuming
 
 ~~`npm install @essexcountycouncil/components-library`~~ SOON
+
+For the moment we are using [Yalc](https://github.com/whitecolor/yalc) locally. Once you're happy with the components library publish it on your local machine using `yalc publish` and then on the project you want to use the components with you can run `yalc add @essexcountycouncil/components-library` to link the package to your project. From here further updates of the component library can be gotten by running `yalc update` within your project after each `yalc publish` in the component library.
+
+Within your project you can then make use of this package like you would with any other package from npm. So if you want to use the Header component you might do something like:
+
+```jsx
+import { Header } from "@essexcountycouncil/components-library";
+<Header />;
+```
+
+As an example of this, check this PR https://github.com/essexcountycouncil/accessibility-manual/pull/2
 
 ## Contributing
 
@@ -24,3 +35,5 @@ We're still building this but as an example of what a component library + storyb
 -   `npm i`, install our dependencies
 -   `npm run storybook`, start your local storybook
 -   Develop within the `lib/` folder. You'll want to create a new folder for your component/element and after doing a basic component, create a story for that component so you can see it within storybook and use that for your building.
+
+For a more thorough writeup see [Contributing: Creating a component + story](https://github.com/essexcountycouncil/components-library/blob/main/lib/stories/Contributing.stories.mdx)
