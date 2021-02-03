@@ -21,12 +21,9 @@ const main = {
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "[name].js",
-        library: {
-            root: "EccComponentLibrary",
-            amd: "ecc-component-library",
-            commonjs: "ecc-component-library",
-        },
+        library: "ecc-component-library",
         libraryTarget: "umd",
+        globalObject: "this",
     },
     stats: {
         assets: false,
@@ -74,7 +71,10 @@ const main = {
         modules: ["node_modules", path.resolve(__dirname, "lib")],
         extensions: [".js", ".jsx"],
     },
-    externals: ["react", "react-dom"],
+    externals: {
+        react: "react",
+        "react-dom": "react-dom",
+    },
     plugins: [
         new CopyPlugin({
             patterns: [
