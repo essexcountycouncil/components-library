@@ -1,4 +1,4 @@
-# ECC Component Library
+# WIP - ECC Component Library
 
 ![Storybook Build CI](https://github.com/essexcountycouncil/components-library/workflows/Storybook%20Build%20CI/badge.svg)
 
