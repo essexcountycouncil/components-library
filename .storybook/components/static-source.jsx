@@ -1,17 +1,13 @@
 import React from "react";
 import ReactDOMServer from "react-dom/server";
-import prettier from "prettier/standalone";
-import parserHtml from "prettier/parser-html";
 import { Source } from "@storybook/addon-docs/blocks";
+
+import { html as formatHtml } from "js-beautify";
 
 const StaticSource = ({ code }) => {
     const staticCode = ReactDOMServer.renderToStaticMarkup(code);
-    const formattedCode = prettier.format(staticCode, {
-        parser: "html",
-        embeddedLanguageFormatting: "off",
-        htmlWhitespaceSensitivity: "ignore",
-        tabWidth: 4,
-        plugins: [parserHtml],
+    const formattedCode = formatHtml(staticCode, {
+        indent_size: 4,
     });
 
     return <Source language="html" code={formattedCode} />;
