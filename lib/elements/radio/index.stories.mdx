@@ -1,0 +1,106 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import StaticSource from '../../../.storybook/components/static-source.jsx';
+import { Radio } from "./index.jsx";
+
+<Meta
+    title="Elements/Radio"
+    component={Radio}
+    argTypes={{
+        name: {
+            name: "Name",
+            description: "Name of the input",
+        },
+        text: {
+            name: "Text",
+            description: "Text to display for the input",
+        },
+        value: {
+            name: "Value",
+            description: "Value of the input",
+        },
+    }}
+    parameters={{
+        jest: ['radio.test.js']
+    }}
+/>
+
+export const Template = (args) => <Radio {...args} />;
+
+# Checkbox
+
+Checkbox enables users to select more than one choice at a time from a selection of inputs, for examples all items that apply from a list.
+
+<Story
+    name="Radio"
+    args={{
+        name: "email",
+        value: "Email",
+    }}
+    decorators={[
+        (Story) => (
+            <div className="form">
+                <div className="group">
+                    <fieldset>
+                        <Story />
+                    </fieldset>
+                </div>
+            </div>
+        ),
+    ]}
+    parameters={{
+        docs: {
+            disable: true,
+        },
+    }}
+>
+    {Template.bind({})}
+</Story>
+
+<Canvas>
+    <div className="form">
+        <div className="group">
+            <fieldset>
+                <legend>Ask your question?</legend>
+                <Radio name="telephone" text="Telephone" value="telephone" />
+                <Radio name="email" text="Eelephone" value="email" />
+            </fieldset>
+        </div>
+    </div>
+</Canvas>
+
+You can replace the `<Radio />` react element in the above code snippet with the following if using static HTML, swapping out `telephone` and `Telephone` where necessary
+
+<StaticSource
+    code={<Radio name="telephone" text="Telephone" value="telephone" />}
+/>
+
+<ArgsTable of={Checkbox} />
+
+## When to use radios
+
+Use radios to give users the ability to:
+
+-   select one option from a list
+
+## When not to use a radio
+
+If you want users to select multiple options from a selection, use the <a href="checkbox">checkbox</a> element.
+
+## How to use radios
+
+Radios should be grouped together in a `<fieldset>` to help users understand they are related with a `<legend>` that describes the group clearly.
+
+### Accessibility
+
+To ensure radios are accessible it is important that the input and label are connected so assisstive technologies can recognise they are connected.
+
+```html
+<input id="post" name="post" type="radio" value="post" />
+<label for="post">Post</label>
+```
+
+## Content to be published
+
+-   Error handling with radios
+-   Conditionally revealing content
+-   Radio hints
