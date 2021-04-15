@@ -36,7 +36,7 @@ export const Link = ({
     }
 
     return (
-        <Tag href={href} title={title}>
+        <Tag href={href} to={href} title={title}>
             {children}
         </Tag>
     );

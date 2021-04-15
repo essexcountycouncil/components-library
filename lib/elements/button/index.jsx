@@ -17,7 +17,12 @@ export const Button = (props) => {
     }
 
     return (
-        <Tag className="button button-start" href={href} role="button">
+        <Tag
+            className="button button-start"
+            href={href}
+            role="button"
+            to={href}
+        >
             {children}
         </Tag>
     );

@@ -5,7 +5,7 @@ export const Back = (props) => {
     const { href, tag: Tag, text, ...attributes } = props;
 
     return (
-        <Tag href={href} className="link-back" {...attributes}>
+        <Tag href={href} className="link-back" to={href} {...attributes}>
             {text}
         </Tag>
     );
