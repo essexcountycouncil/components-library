@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Source } from '@storybook/addon-docs/blocks';
 import StaticSource from '../../../.storybook/components/static-source.jsx';
 import Header from './index.jsx';
 
@@ -45,16 +45,18 @@ We have 2 versions of the header
 
 Use the default header for Essex County Council web pages that use the Essex.gov.uk domain.
 
-<Canvas>
-    <Story
-        name="Default header"
-        args={{
-            title: 'ECC Storybook'
-        }}
-    >
-        {Template.bind({})}
-    </Story>
-</Canvas>
+<Story
+    name="Default header"
+    args={{
+        title: 'ECC Storybook'
+    }}
+>
+    {Template.bind({})}
+</Story>
+
+<Source
+    code={`<Header title='ECC Storybook' />`}
+/>
 
 <StaticSource code={<Header title='ECC Storybook' />} />
 
@@ -64,21 +66,32 @@ Use the default header for Essex County Council web pages that use the Essex.gov
 
 Use the navigation header to add navigational assistance to users on Essex Councty Council websites.
 
-<Canvas>
-    <Story
-        name="Navigation header"
-        args={{
-            title: 'ECC Storybook',
-            navLinks: [
-                {href: '#1', text: 'Link 1'},
-                {href: '#2', text: 'Link 2'},
-                {href: '#3', text: 'Link 3'}
-            ]
-        }}
-    >
-        {Template.bind({})}
-    </Story>
-</Canvas>
+<Story
+    name="Navigation header"
+    args={{
+        title: 'ECC Storybook',
+        navLinks: [
+            {href: '#1', text: 'Link 1'},
+            {href: '#2', text: 'Link 2'},
+            {href: '#3', text: 'Link 3'}
+        ]
+    }}
+>
+    {Template.bind({})}
+</Story>
+
+<Source
+    code={`
+<Header
+    title='ECC Storybook'
+    navLinks={[
+        {href: '#1', text: 'Link 1'},
+        {href: '#2', text: 'Link 2'},
+        {href: '#3', text: 'Link 3'}
+    ]}
+/>
+`}
+/>
 
 <StaticSource
     code={
