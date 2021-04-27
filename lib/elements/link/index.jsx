@@ -1,7 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const Link = ({ children, download, external, href, target, title }) => {
+export const Link = ({
+    children,
+    download,
+    external,
+    href,
+    tag: Tag,
+    target,
+    title,
+}) => {
     if (external) {
         let infoMsg = "Replacing your browser tab with an external website";
 
@@ -28,9 +36,9 @@ export const Link = ({ children, download, external, href, target, title }) => {
     }
 
     return (
-        <a href={href} title={title}>
+        <Tag href={href} to={href} title={title}>
             {children}
-        </a>
+        </Tag>
     );
 };
 
@@ -39,6 +47,7 @@ Link.propTypes = {
     download: PropTypes.bool,
     external: PropTypes.bool,
     href: PropTypes.string.isRequired,
+    tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     target: PropTypes.oneOf(["", "_blank"]),
     title: PropTypes.string.isRequired,
 };
@@ -46,6 +55,7 @@ Link.propTypes = {
 Link.defaultProps = {
     download: false,
     external: false,
+    tag: "a",
     target: "",
 };
 
