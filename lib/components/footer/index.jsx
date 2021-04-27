@@ -32,7 +32,9 @@ export const Footer = () => (
                             </a>
                         </li>
                         <li>
-                            <a href="/topic/contact-us">Contact us</a>
+                            <a href="https://www.essex.gov.uk/contact-us">
+                                Contact us
+                            </a>
                         </li>
                     </ul>
                     <ul className="social">
@@ -67,7 +69,9 @@ export const Footer = () => (
         <div className="footer-bottom">
             <div className="footer">
                 <ul className="credits">
-                    <li className="copyright">© Essex County Council 2020</li>
+                    <li className="copyright">
+                        © Essex County Council {new Date().getFullYear()}
+                    </li>
                     <li className="design-link">
                         <a href="https://servicedesign.blog.essex.gov.uk/">
                             Built by the Service Design Team
