@@ -36,4 +36,4 @@ As an example of this, check this PR https://github.com/essexcountycouncil/acces
 -   `npm run storybook`, start your local storybook
 -   Develop within the `lib/` folder. You'll want to create a new folder for your component/element and after doing a basic component, create a story for that component so you can see it within storybook and use that for your building.
 
-For a more thorough writeup see [Contributing: Creating a component + story](https://github.com/essexcountycouncil/components-library/blob/main/lib/stories/Contributing.stories.mdx)
+For a more thorough writeup see [Contributing: Creating a component + story](https://essexcountycouncil.github.io/components-library/?path=/story/contributing--page)
