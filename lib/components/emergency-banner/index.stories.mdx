@@ -1,0 +1,85 @@
+import { Meta, Story, Canvas, ArgsTable, Source } from "@storybook/addon-docs/blocks";
+import StaticSource from '../../../.storybook/components/static-source.jsx';
+import { EmergencyBanner } from "./index.jsx";
+
+export const defaultArgs = {
+    type: "notable-death",
+    heading: "His Royal Highness Henry VIII",
+    content: "1509-1547",
+    link: {url: 'https://en.wikipedia.org/wiki/Henry_VIII', text: 'More information', title: 'Henry VIII'}
+};
+
+<Meta
+    title="Components/Emergency Banner"
+    component={EmergencyBanner}
+    argTypes={{
+        type: {
+            name: "Type",
+            description: "Type of banner to show",
+            control: {
+                type: "select",
+                options: ['notable-death', 'national-emergency', 'local-emergency'],
+            },
+        },
+        heading: {
+            name: "Banner heading",
+            description: "Heading",
+        },
+        content: {
+            name: "Content",
+            description: "Text",
+        },
+    }}
+    parameters={{
+        actions: {
+            disable: true,
+        },
+    }}
+/>
+
+# Emergency Banner
+
+<ArgsTable of={EmergencyBanner} />
+
+### General
+
+<Story
+    name="Emergency Banner"
+    args={defaultArgs}
+>
+    {(args) => (
+        <EmergencyBanner {...args} />
+    )}
+</Story>
+
+<Source
+    code={`
+<EmergencyBanner
+    type="notable-death"
+    heading="His Royal Highness Henry VIII"
+    content="1509-1547"
+    link={{
+        url: 'https://en.wikipedia.org/wiki/Henry_VIII',
+        text: 'More information',
+        title: 'Henry VIII'
+    }}
+/>
+`}
+/>
+
+<StaticSource
+    code={EmergencyBanner(defaultArgs)}
+/>
+
+### Homepage only
+
+<Story
+    name="Emergency Banner on Homepage"
+    args={defaultArgs}
+>
+    {(args) => (
+        <div className="homepage">
+            <EmergencyBanner {...args} />
+        </div>
+    )}
+</Story>
