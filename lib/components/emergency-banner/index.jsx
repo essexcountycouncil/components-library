@@ -20,7 +20,12 @@ export const EmergencyBanner = ({ type, heading, content, link }) => (
         <div className="container">
             <section className="content">
                 <div className="column-two-thirds">
-                    <h2 className="emergency-banner__heading">{heading}</h2>
+                    <h2
+                        id="emergency__heading"
+                        className="emergency-banner__heading"
+                    >
+                        {heading}
+                    </h2>
                     {content && (
                         <p className="emergency-banner__description">
                             {content}
@@ -29,8 +34,9 @@ export const EmergencyBanner = ({ type, heading, content, link }) => (
                     {link.url && (
                         <a
                             href={link.url}
-                            className="emergency-banner__link govuk-link"
-                            title={link.title}
+                            className="emergency-banner__link"
+                            id="emergency__link"
+                            aria-labelledby="emergency__link emergency__heading"
                         >
                             {link.text}
                         </a>
@@ -52,7 +58,6 @@ EmergencyBanner.propTypes = {
     link: PropTypes.shape({
         url: PropTypes.string.isRequired,
         text: PropTypes.string.isRequired,
-        title: PropTypes.string,
     }),
 };
 
