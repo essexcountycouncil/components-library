@@ -80,13 +80,17 @@
     font-size: 1.1875rem !important;
     line-height: 1.31579 !important;
 
-    &.govuk-link:link,
-    &.govuk-link:visited {
+    &:link,
+    &:visited {
         color: $white;
     }
 
-    &.govuk-link:focus {
-        color: $focus-colour;
+    &:hover {
+        color: $grey-lighter;
+    }
+
+    &:focus {
+        color: $black;
     }
 }
 
