@@ -9,6 +9,17 @@ import { Signup } from "./index.jsx";
         jest: ['signup.test.js']
     }}
     argTypes={{
+        href: {
+            name: "Link for basic sign up",
+            description: "Sets the link for the basic signup",
+        },
+        input: {
+            name: "Should show inputs",
+            description: "Controls whether the sign up has an input",
+            controls: {
+                type: "boolean",
+            },
+        },
         isBig: {
             name: "Should be big size",
             description: "Controls whether the sign up should be big or not",
@@ -23,19 +34,23 @@ import { Signup } from "./index.jsx";
 
 Use the signup to allow users to register for notifications. The method used applies to email notifcations, but could be applied to other methoda of communications.
 
-We have 2 types of signup that we use at Essex County Council Website (Essex.gov.uk)
+We have 2 types of signup that we use at Essex County Council Website (Essex.gov.uk) with each having a variation for showing bigger.
 
 -   the [basic sign up](#basic-sign-up)
--   the [big sign up](#big-sign-up)
+-   the [input sign up](#input-sign-up)
 
 ## Basic sign up
 
 ### When to use sign up
 
+For when you are happy to send the user to another page/website for handling to data capture and subscription.
+
 <Canvas>
     <Story
         name="Basic sign up"
         args={{
+            href: 'https://www.essex.gov.uk',
+            input: false,
             isBig: false,
         }}
     >
@@ -43,24 +58,43 @@ We have 2 types of signup that we use at Essex County Council Website (Essex.gov
     </Story>
 </Canvas>
 
-<StaticSource code={<Signup />} />
+<StaticSource code={<Signup href="https://www.essex.gov.uk" />} />
 
-## Big sign up
+#### Is big (Homepage) variation
 
-### When to use big sign up
+<Canvas>
+    <Signup href="https://www.essex.gov.uk" isBig />
+</Canvas>
+
+<StaticSource code={<Signup href="https://www.essex.gov.uk" isBig />} />
+
+## Input sign up
+
+### When to use input sign up
+
+For when you want to capture the email and setup the newsletter subscription yourself.
 
 <Canvas>
     <Story
-        name="Big sign up"
+        name="Input sign up"
         args={{
-            isBig: true,
+            input: true,
+            isBig: false,
         }}
     >
         {(args) => <Signup {...args} />}
     </Story>
 </Canvas>
 
-<StaticSource code={<Signup isBig />} />
+<StaticSource code={<Signup input />} />
+
+#### Is big (Homepage) variation
+
+<Canvas>
+    <Signup input isBig />
+</Canvas>
+
+<StaticSource code={<Signup input isBig />} />
 
 ## How to use sign ups
 
