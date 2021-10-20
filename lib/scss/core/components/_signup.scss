@@ -60,18 +60,18 @@
                     -webkit-box-shadow: 0 0 0px 1000px $white inset;
                 }
             }
-        }
-    }
-    .signup-button {
-        @include grid-column(4 / 12);
-        position: relative;
-        .button.subscribe {
-            @include more;
-            border: $border-normal $brand solid;
-            &:hover {
-                border: $border-normal $brand-hover-darken solid;
-                color: $white;
-                background-color: $brand-hover-darken;
+            .signup-button {
+                @include grid-column(4 / 12);
+                position: relative;
+                .button.subscribe {
+                    @include more;
+                    border: $border-normal $brand solid;
+                    &:hover {
+                        border: $border-normal $brand-hover-darken solid;
+                        color: $white;
+                        background-color: $brand-hover-darken;
+                    }
+                }
             }
         }
     }
@@ -125,18 +125,19 @@
                 }
             }
         }
-        .button.subscribe {
-            background-color: $brand;
-            border: $border-normal $white solid;
-            color: $white;
-            text-align: center;
-            width: 100%;
+        .signup-button {
+            @extend %grid-row;
             @include media(mobile) {
-                margin-bottom: 0;
+                padding-left: $gutter * 0.5;
+                padding-right: $gutter * 0.5;
             }
-            &:hover {
-                color: $brand;
-                background-color: $white;
+            @include media(tablet) {
+                padding-left: $gutter * 0.5;
+                padding-right: $gutter * 0.5;
+            }
+            @include media(desktop) {
+                padding-left: $gutter;
+                padding-right: $gutter;
             }
         }
         .social {
@@ -160,5 +161,20 @@
     margin-top: 15px;
     padding-left: 0;
     padding-right: 0;
-    text-align: center;
+
+    a.button.subscribe {
+        background-color: $brand;
+        border: $border-normal $white solid;
+        color: $white;
+        text-align: center;
+        width: 33%;
+        @include media(mobile) {
+            margin-bottom: 0;
+            width: 100%;
+        }
+        &:hover {
+            color: $brand;
+            background-color: $white;
+        }
+    }
 }
