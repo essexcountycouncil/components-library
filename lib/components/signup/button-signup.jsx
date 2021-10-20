@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const ButtonSignupMarkup = (href) => (
     <>
-        <h2 className="section-heading">Sign up for our e-newsletters</h2>
+        <h2 className="section-heading">Sign up for e-newsletters</h2>
         <p>Get the latest news and information about your council services</p>
         <div className="btn-area signup-button" id="submitYourEmailAddress">
             <a href={href} className="button subscribe">
